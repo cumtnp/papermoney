@@ -71,12 +71,6 @@
       "color": "red"
     },
     {
-      "id": "OtherIncome",
-      "v": 709,
-      "name": "Other Income",
-      "color": "green"
-    },
-    {
       "id": "OperatingIncome",
       "v": 60596,
       "name": "Operating Income",
@@ -86,6 +80,12 @@
       "id": "Incomebeforetax",
       "v": 61305,
       "name": "Income Before Tax",
+      "color": "green"
+    },
+    {
+      "id": "OtherIncome",
+      "v": 709,
+      "name": "Other Income",
       "color": "green"
     },
     {

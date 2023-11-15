@@ -7,6 +7,14 @@ const port = 3034;
 app.use(express.static('public'));
 app.use('/data-private', express.static('data-private'));
 
+// import CompanyReporter from './CompanyReporter.js';
+
+app.get('/Company', (req, res) => {
+    // CompanyReporter.show
+});
+
+
 app.listen(port, () => {
   console.log(`服务器正在 http://localhost:${port} 上监听`);
 });
+
