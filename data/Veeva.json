@@ -1,0 +1,139 @@
+{
+  "title": "Veeva Q2 FY24 Income Statement",
+  "endDate": "Ending July 2023",
+  "metrics": {
+    "ARR": "$1.39B",
+    "DBNR": "110%"
+  },
+  "values": {
+    "Commercial solutions":{
+      "amount": "$243M",
+      "growth": "+3% Y/Y",
+      "v": 243000000,
+      "desc": "Commercial solutions",
+      "linkto": "subscription",
+      "leaf": "l",
+      "type": "income"
+    },
+    "R&D Solutions":{
+      "amount": "$227M",
+      "growth": "+18% Y/Y",
+      "v": 227000000,
+      "desc": "R&D Solutions",
+      "linkto": "subscription",
+      "leaf": "l",
+      "type": "income"
+    },
+    "subscription": {
+      "amount": "$471M",
+      "growth": "+10% Y/Y",
+      "v": 471000000,
+      "desc": "subscription",
+      "linkto": "revenue",
+      "leaf": "c",
+      "type": "income"
+    },
+    "services": {
+      "amount": "$120M",
+      "growth": "+13% Y/Y",
+      "v": 120000000,
+      "desc": "services",
+      "linkto": "revenue",
+      "leaf": "c",
+      "type": "income"
+    },
+    "revenue": {
+      "amount": "$590M",
+      "growth": "+19% Y/Y",
+      "v": 590000000,
+      "desc": "revenue",
+      "linkto": "grossProfit,costOfRevenue",
+      "leaf": "c",
+      "type": "income"
+    },
+    "grossProfit": {
+      "amount": "$421M",
+      "margin": "71% margin",
+      "v": 421000000,
+      "desc": "grossProfit",
+      "linkto": "operatingProfit,operatingExpenses",
+      "leaf": "c",
+      "type": "balance"
+    },
+    "costOfRevenue": {
+      "amount": "($169M)",
+      "v": 169000000,
+      "desc": "costOfRevenue",
+      "linkto": null,
+      "leaf": "r",
+      "type": "expense"
+    },
+    "operatingProfit": {
+      "amount": "$104M",
+      "margin": "18% margin",
+      "v": 104000000,
+      "desc": "operatingProfit",
+      "linkto": "netProfit,Tax",
+      "leaf": "c",
+      "type": "balance"
+    },
+    "operatingExpenses": {
+      "amount": "($317M)",
+      "v": 317000000,
+      "desc": "operatingExpenses",
+      "linkto": "R&D,S&M,G&A",
+      "leaf": "c",
+      "type": "expense"
+    },
+    "netProfit": {
+      "amount": "$112M",
+      "margin": "19% margin",
+      "v": 112000000,
+      "desc": "netProfit",
+      "linkto": null,
+      "leaf": "r",
+      "type": "balance"
+    },
+    "Other": {
+      "amount": "$39M",
+      "v": 39000000,
+      "desc": "Other",
+      "linkto": "netProfit",
+      "leaf": "li",
+      "type": "balance"
+    },
+    "Tax": {
+      "amount": "($31M)",
+      "v": 31000000,
+      "desc": "Tax",
+      "leaf": "r",
+      "type": "expense"
+    },
+    "R&D": {
+      "amount": "($157M)",
+      "percentageOfRevenue": "27% of revenue",
+      "v": 157000000,
+      "desc": "R&D",
+      "linkto": null,
+      "leaf": "r",
+      "type": "expense"
+    },
+    "S&M": {
+      "amount": "($97M)",
+      "percentageOfRevenue": "16% of revenue",
+      "v": 97000000,
+      "desc": "S&M",
+      "linkto": null,
+      "leaf": "r",
+      "type": "expense"
+    },
+    "G&A": {
+      "amount": "($63M)",
+      "percentageOfRevenue": "11% of revenue",
+      "v": 63000000,
+      "desc": "G&A",
+      "leaf": "r",
+      "type": "expense"
+    }
+  }      
+}

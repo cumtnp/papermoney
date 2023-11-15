@@ -1,0 +1,206 @@
+{
+    "title": "Alphabet Inc. 2023Q3 Case Flow",
+    "logo": "https://www.logo.wine/a/logo/Alphabet_Inc./Alphabet_Inc.-Logo.wine.svg",
+    "source": "https://www.sec.gov/ix?doc=/Archives/edgar/data/0001652044/000165204423000094/goog-20230930.htm",
+    "unit": "M",
+    "values": [
+        {
+            "id": "NetIncome",
+            "v": 53108,
+            "name": "Net Income",
+            "color": "green"
+        },
+        {
+            "id": "CashFromOperatingActivities",
+            "v": 82831,
+            "name": "Cash from Operating activities",
+            "color": "green"
+        },
+        {
+            "id": "CashFromInvestingActivities",
+            "v": -20896,
+            "name": "Cash from investing activities",
+            "color": "red"
+        },
+        {
+            "id": "PPE",
+            "v": -21232,
+            "name": "PP&E",
+            "color": "red"
+        },
+        {
+            "id": "DepreciationAndAmortization",
+            "v": 10383,
+            "name": "Depreciation & Amortization",
+            "color": "green"
+        },
+        {
+            "id": "MarketableSecurities",
+            "v": 3220,
+            "name": "Marketable securities",
+            "color": "red"
+        },
+        {
+            "id": "StockBasedComps",
+            "v": 16801,
+            "name": "Stock-based Comps",
+            "color": "green"
+        },
+        {
+            "id": "NonMarketableSecurities",
+            "v": -1433,
+            "name": "Non-marketable securities",
+            "color": "red"
+        },
+        {
+            "id": "Taxes",
+            "v": 4299,
+            "name": "Taxes",
+            "color": "green"
+        },
+        {
+            "id": "Acquisitions",
+            "v": -466,
+            "name": "Acquisitions",
+            "color": "red"
+        },
+        {
+            "id": "AcctReceivable",
+            "v": -1315,
+            "name": "Acct receivable",
+            "color": "red"
+        },
+        {
+            "id": "OthersInvesting",
+            "v": -985,
+            "name": "Others (Investing)",
+            "color": "red"
+        },
+        {
+            "id": "AcctPayables",
+            "v": 237,
+            "name": "Acct payables",
+            "color": "green"
+        },
+        {
+            "id": "CashFromFinancingActivities",
+            "v": -52785,
+            "name": "Cash from financing activities",
+            "color": "red"
+        },
+        {
+            "id": "StockBasedAwards",
+            "v": -7157,
+            "name": "Stock-based awards",
+            "color": "red"
+        },
+        {
+            "id": "ShareRepurchases",
+            "v": -45313,
+            "name": "Share repurchases",
+            "color": "red"
+        },
+        {
+            "id": "DebtIssuanceRepayment",
+            "v": -323,
+            "name": "Debt issuance/repayment",
+            "color": "red"
+        },
+        {
+            "id": "OthersFinancing",
+            "v": 8,
+            "name": "Others (Financing)",
+            "color": "red"
+        },
+        {
+            "id": "OthersOperating",
+            "v": -682,
+            "name": "Others (Operating)",
+            "color": "red"
+        },
+        {
+            "id": "Others",
+            "v": -327,
+            "name": "Others",
+            "color": "red"
+        }
+    ],
+    "link": [
+        {
+            "from": "NetIncome",
+            "to": "CashFromOperatingActivities"
+        },
+        {
+            "from": "DepreciationAndAmortization",
+            "to": "CashFromOperatingActivities"
+        },
+        {
+            "from": "StockBasedComps",
+            "to": "CashFromOperatingActivities"
+        },
+        {
+            "from": "Taxes",
+            "to": "CashFromOperatingActivities"
+        },
+        {
+            "from": "AcctReceivable",
+            "to": "CashFromOperatingActivities"
+        },
+        {
+            "from": "AcctPayables",
+            "to": "CashFromOperatingActivities"
+        },
+        {
+            "from": "OthersOperating",
+            "to": "CashFromOperatingActivities"
+        },
+        {
+            "from": "CashFromOperatingActivities",
+            "to": "CashFromInvestingActivities"
+        },
+        {
+            "from": "CashFromOperatingActivities",
+            "to": "CashFromFinancingActivities"
+        },
+        {
+            "from": "CashFromOperatingActivities",
+            "to": "Others"
+        },
+        {
+            "from": "CashFromInvestingActivities",
+            "to": "PPE"
+        },
+        {
+            "from": "CashFromInvestingActivities",
+            "to": "MarketableSecurities"
+        },
+        {
+            "from": "CashFromInvestingActivities",
+            "to": "NonMarketableSecurities"
+        },
+        {
+            "from": "CashFromInvestingActivities",
+            "to": "Acquisitions"
+        },
+        {
+            "from": "CashFromInvestingActivities",
+            "to": "OthersInvesting"
+        },
+        {
+            "from": "CashFromFinancingActivities",
+            "to": "StockBasedAwards"
+        },
+        {
+            "from": "CashFromFinancingActivities",
+            "to": "ShareRepurchases"
+        },
+        {
+            "from": "CashFromFinancingActivities",
+            "to": "DebtIssuanceRepayment"
+        },
+        {
+            "from": "CashFromFinancingActivities",
+            "to": "OthersFinancing"
+        }
+    ]
+}

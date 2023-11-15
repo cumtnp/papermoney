@@ -1,0 +1,77 @@
+.container {
+    width: 100%;
+    height: auto;
+    min-width: 1300px;
+    /* min-height: 50vw; /* 保持2:1的宽高比 */
+    /* max-height: 90vh;
+    max-width: 90vw;  */
+    margin-top: 48px;
+    background: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container-title {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-title>img {
+    width: auto;
+    height: 64px;
+}
+
+.container .chart {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.container H1 {
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    /* 将元素的左边距设为父容器宽度的 50% */
+}
+
+.chart-node-label {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    /* white-space: normal;  */
+}
+
+.chart-node-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: normal;
+}
+
+.chart-node-title.left {
+    white-space: normal;
+}
+
+.chart-node-desc {
+    font-size: 14px;
+    font-weight: normal;    
+    text-align: center;
+    letter-spacing: normal;
+}
+
+.chart-node-yy,
+.chart-node-margin {
+    font-size: 12px;
+    fill:#666;
+    /* 或者其他您希望的字号 */
+}

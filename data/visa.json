@@ -1,0 +1,168 @@
+{
+    "title": "Visa Q3 FY23 Income Statement",
+    "endDate": "Ending June 2023",
+    "metrics": {},
+    "values": {
+      "Service": {
+        "amount": "$3.7B",
+        "growth": "+15% Y/Y",
+        "v": 3700000000,
+        "desc": "Service",
+        "linkto": "grossRevenue",
+        "leaf": "l",
+        "type": "income"
+      },
+      "Data processing": {
+        "amount": "$4.1B",
+        "growth": "+15% Y/Y",
+        "v": 4100000000,
+        "desc": "Data processing",
+        "linkto": "grossRevenue",
+        "leaf": "l",
+        "type": "income"
+      },
+      "International transaction": {
+        "amount": "$2.9B",
+        "growth": "+14% Y/Y",
+        "v": 2900000000,
+        "desc": "International transaction",
+        "linkto": "grossRevenue",
+        "leaf": "l",
+        "type": "income"
+      },
+      "OtherIncome": {
+        "amount": "$0.6B",
+        "growth": "+15% Y/Y",
+        "v": 600000000,
+        "desc": "OtherIncome",
+        "linkto": "grossRevenue",
+        "leaf": "l",
+        "type": "income"
+      },
+      "grossRevenue": {
+        "amount": "$11.3B",
+        "v": 11300000000,
+        "desc": "Gross revenue",
+        "linkto": "netRevenue",
+        "leaf": "c",
+        "type": "income"
+      },
+      "Client incentives": {
+        "amount": "($3.2B)",
+        "v": 3200000000,
+        "desc": "Client incentives",
+        "linkto": "netRevenue",
+        "leaf": "r",
+        "type": "expense"
+      },
+      "netRevenue": {
+        "amount": "$8.1B",
+        "growth": "+12% Y/Y",
+        "v": 8100000000,
+        "desc": "Net revenue",
+        "linkto": "grossProfit",
+        "leaf": "c",
+        "type": "income"
+      },
+      "grossProfit": {
+        "amount": "$7.9B",
+        "margin": "98% margin",
+        "v": 7900000000,
+        "desc": "Gross profit",
+        "linkto": "operatingProfit,operatingExpenses",
+        "leaf": "c",
+        "type": "balance"
+      },
+      "Operating expenses": {
+        "amount": "($2.9B)",
+        "v": 2900000000,
+        "desc": "Operating expenses",
+        "linkto": "Personnel,Marketing,Professional fees,D&A,General & admin,Litigation",
+        "leaf": "c",
+        "type": "expense"
+      },
+      "operatingProfit": {
+        "amount": "$5.0B",
+        "margin": "62% margin",
+        "v": 5000000000,
+        "desc": "Operating profit",
+        "linkto": "netProfit,OtherIncome",
+        "leaf": "c",
+        "type": "balance"
+      },
+      "Personnel": {
+        "amount": "($1.5B)",
+        "v": 1500000000,
+        "desc": "Personnel",
+        "leaf": "r",
+        "type": "expense"
+      },
+      "Marketing": {
+        "amount": "($0.3B)",
+        "v": 300000000,
+        "desc": "Marketing",
+        "leaf": "r",
+        "type": "expense"
+      },
+      "Professional fees": {
+        "amount": "($0.1B)",
+        "v": 100000000,
+        "desc": "Professional fees",
+        "leaf": "r",
+        "type": "expense"
+      },
+      "D&A": {
+        "amount": "($0.2B)",
+        "v": 200000000,
+        "desc": "D&A",
+        "leaf": "r",
+        "type": "expense"
+      },
+      "General & admin": {
+        "amount": "($0.3B)",
+        "v": 300000000,
+        "desc": "General & admin",
+        "leaf": "r",
+        "type": "expense"
+      },
+      "Litigation": {
+        "amount": "($0.5B)",
+        "v": 500000000,
+        "desc": "Litigation",
+        "leaf": "r",
+        "type": "expense"
+      },
+      "OtherExpenses": {
+        "amount": "$0.2B",
+        "v": 200000000,
+        "desc": "Other Expenses",
+        "linkto": "operatingProfit",
+        "leaf": "li",
+        "type": "balance"
+      },
+      "netProfit": {
+        "amount": "$4.2B",
+        "margin": "51% margin",
+        "v": 4200000000,
+        "desc": "Net profit",
+        "linkto": "Tax",
+        "leaf": "r",
+        "type": "balance"
+      },
+      "Tax": {
+        "amount": "($1.0B)",
+        "v": 1000000000,
+        "desc": "Tax",
+        "leaf": "r",
+        "type": "expense"
+      },
+      "Network & processing": {
+        "amount": "($0.2B)",
+        "v": 200000000,
+        "desc": "Network & processing",
+        "leaf": "r",
+        "type": "expense"
+      }
+    }
+  }
+  

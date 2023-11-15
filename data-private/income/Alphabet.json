@@ -1,0 +1,162 @@
+{
+  "title": "Alphabet Inc. 2023Q3 Income Statement",
+  "logo": "https://www.logo.wine/a/logo/Alphabet_Inc./Alphabet_Inc.-Logo.wine.svg",
+  "source": "https://www.sec.gov/ix?doc=/Archives/edgar/data/0001652044/000165204423000094/goog-20230930.htm",
+  "unit": "M",
+  "values": [
+    {
+      "id": "Advertising",
+      "v": 172338,
+      "name": "Advertising",
+      "color": "gray"
+    },
+    {
+      "id": "Cloud",
+      "v": 23896,
+      "name": "Cloud",
+      "color": "gray"
+    },
+    {
+      "id": "GoogleOthers",
+      "v": 23894,
+      "name": "Google others",
+      "color": "gray"
+    },
+    {
+      "id": "Others",
+      "v": 956,
+      "name": "Others",
+      "color": "gray"
+    },
+    {
+      "id": "Revenue",
+      "v": 221084,
+      "name": "Revenue",
+      "color": "gray"
+    },
+    {
+      "id": "COGS",
+      "v": 95757,
+      "name": "Cost of Revenue",
+      "color": "red"
+    },
+    {
+      "id": "GrossProfit",
+      "v": 125327,
+      "name": "Gross Profit",
+      "color": "green"
+    },
+    {
+      "id": "OperatingExpense",
+      "v": 64731,
+      "name": "Operating Expense",
+      "color": "red"
+    },
+    {
+      "id": "R&D",
+      "v": 33314,
+      "name": "R&D",
+      "color": "red"
+    },
+    {
+      "id": "Sales&Marketing",
+      "v": 20198,
+      "name": "Sales&Marketing",
+      "color": "red"
+    },
+    {
+      "id": "G&A",
+      "v": 11219,
+      "name": "General&Admin",
+      "color": "red"
+    },
+    {
+      "id": "OtherIncome",
+      "v": 709,
+      "name": "Other Income",
+      "color": "green"
+    },
+    {
+      "id": "OperatingIncome",
+      "v": 60596,
+      "name": "Operating Income",
+      "color": "green"
+    },
+    {
+      "id": "Incomebeforetax",
+      "v": 61305,
+      "name": "Income Before Tax",
+      "color": "green"
+    },
+    {
+      "id": "Tax",
+      "v": 8197,
+      "name": "Tax",
+      "color": "Red"
+    },
+    {
+      "id": "Netincome",
+      "v": 53108,
+      "name": "Net Income",
+      "color": "green"
+    }
+  ],
+  "link": [
+    {
+      "from": "Advertising",
+      "to": "Revenue"
+    },
+    {
+      "from": "GoogleOthers",
+      "to": "Revenue"
+    },
+    {
+      "from": "Cloud",
+      "to": "Revenue"
+    },
+    {
+      "from": "Others",
+      "to": "Revenue"
+    },
+    {
+      "from": "Revenue",
+      "to": "COGS"
+    },
+    {
+      "from": "Revenue",
+      "to": "GrossProfit"
+    },
+    {
+      "from": "GrossProfit",
+      "to": "OperatingExpense"
+    },
+    {
+      "from": "GrossProfit",
+      "to": "OperatingIncome"
+    },
+    {
+      "from": "OperatingExpense",
+      "to": "R&D"
+    },
+    {
+      "from": "OperatingExpense",
+      "to": "Sales&Marketing"
+    },
+    {
+      "from": "OperatingExpense",
+      "to": "G&A"
+    },
+    {
+      "from": "OtherIncome",
+      "to": "Netincome"
+    },
+    {
+      "from": "OperatingIncome",
+      "to": "Netincome"
+    },
+    {
+      "from": "OperatingIncome",
+      "to": "Tax"
+    }
+  ]
+}

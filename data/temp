@@ -1,0 +1,149 @@
+{
+    "title": "ACTIVISION BLIZZARD Q3 FY23 Income Statement",
+    "endDate": "Ending Q3 FY23",
+    "values": {
+        "productSales": {
+            "v": 520,
+            "amount": "520",
+            "desc": "product sales",
+            "leaf": "l",
+            "linkto":"Revenue",
+            "type": "income"
+        },
+        "inGameSubscriptionAndOthers": {
+            "v": 1687,
+            "amount": "1687",
+            "desc": "in-game, subscription and others",
+            "leaf": "l",
+            "linkto":"Revenue",
+            "type": "income"
+        },
+        "Revenue": {
+            "v": 2207,
+            "amount": "2207",
+            "desc": "Revenue",
+            "leaf": "c",
+            "linkto":"OperatingIncome,CostAndExpenses",
+            "type": "income"
+        },
+        "CostAndExpenses": {
+            "v": 1624,
+            "amount": "1624",
+            "desc": "Cost and Expenses",
+            "leaf": "c",
+            "linkto":"CostOfRevenuesProductSales,CostOfRevenuesInGameSubscriptionAndOther,ProductDevelopment,SalesAndMarketing,GeneralAndAdministrative",
+            "type": "expense"
+        },
+        "OperatingIncome": {
+            "v": 583,
+            "amount": "583",
+            "desc": "Operating Income",
+            "leaf": "c",
+            "linkto":"IncomeBeforeTax",
+            "type": "balance"
+        },
+        "CostOfRevenuesProductSales": {
+            "v": 221,
+            "amount": "221",
+            "desc": "Cost of revenues—product sales",
+            "leaf": "c",
+            "linkto":"ProductCosts,SoftwareRoyaltiesA",
+            "type": "balance"
+        },
+        "CostOfRevenuesInGameSubscriptionAndOther": {
+            "v": 435,
+            "amount": "435",
+            "desc": "Cost of revenues—in-game, subscription, and other",
+            "leaf": "c",
+            "linkto":"GameOperationsAndDistributionCosts,SoftwareRoyaltiesB",
+            "type": "expense"
+        },
+        "ProductDevelopment": {
+            "v": 405,
+            "amount": "405",
+            "desc": "Product development",
+            "leaf": "r",
+            "type": "expense"
+        },
+        "SalesAndMarketing": {
+            "v": 333,
+            "amount": "333",
+            "desc": "Sales and marketing",
+            "leaf": "r",
+            "type": "expense"
+        },
+        "GeneralAndAdministrative": {
+            "v": 230,
+            "amount": "230",
+            "desc": "General and administrative",
+            "leaf": "r",
+            "type": "expense"
+        },
+        "InterestExpensesFromDebt": {
+            "v": 27,
+            "amount": "27",
+            "desc": "Interest Expenses from debt",
+            "leaf": "c",
+            "linkto":"IncomeBeforeTax",
+            "type": "income"
+        },
+        "OtherIncomeExpenses": {
+            "v": 168,
+            "amount": "-168",
+            "desc": "Other income Expenses",
+            "leaf": "c",
+            "linkto":"IncomeBeforeTax",
+            "type": "income"
+        },
+        "ProductCosts": {
+            "v": 116,
+            "amount": "116",
+            "desc": "Product costs",
+            "leaf": "r",
+            "type": "expense"
+        },
+        "SoftwareRoyaltiesA": {
+            "v": 105,
+            "amount": "105",
+            "desc": "Software royalties and amortization",
+            "leaf": "r",
+            "type": "expense"
+        },
+        "GameOperationsAndDistributionCosts": {
+            "v": 373,
+            "amount": "373",
+            "desc": "Game operations and distribution costs",
+            "leaf": "r",
+            "type": "expense"
+        },
+        "SoftwareRoyaltiesB": {
+            "v": 62,
+            "amount": "62",
+            "desc": "Software royalties and amortization",
+            "leaf": "r",
+            "type": "expense"
+        },
+        "IncomeBeforeTax": {
+            "v": 724,
+            "amount": "724",
+            "desc": "income before tax",
+            "linkto":"NetIncome,Tax",
+            "leaf": "c",
+            "type": "balance"
+        },
+        "Tax": {
+            "v": 137,
+            "amount": "137",
+            "desc": "tax",
+            "leaf": "r",
+            "type": "expense"
+        },
+        "NetIncome": {
+            "v": 587,
+            "amount": "587",
+            "desc": "Net Income",
+            "leaf": "l",
+            "type": "income"
+        }
+    }
+}

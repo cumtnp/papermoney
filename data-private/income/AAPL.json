@@ -1,0 +1,169 @@
+{
+  "title": "Apple Inc. Q3 FY23 Income Statement",
+  "logo":"https://images.crowdspring.com/blog/wp-content/uploads/2022/08/18131304/apple_logo_black.svg_.png",
+  "unit": "M",
+  "values": [
+    {
+      "id": "iPhone",
+      "v": 39669,
+      "name": "iPhone",
+      "margin":0.484,
+      "yy": 0.1,
+      "color": "blue"
+    },
+    {
+      "id": "Mac",
+      "v": 6840,
+      "name": "Mac",
+      "margin":0.484,
+      "yy":-0.01,
+      "color": "blue"
+    },
+    {
+      "id": "iPad",
+      "v": 5791,
+      "name": "iPad",
+      "color": "blue"
+    },
+    {
+      "id": "WearablesHomeAndAccessories",
+      "v": 8284,
+      "name": "Wearables & Others",
+      "color": "blue"
+    },
+    {
+      "id": "Services",
+      "v": 21213,
+      "name": "Services",
+      "color": "blue"
+    },
+    {
+      "id": "TotalNetSales",
+      "v": 81797,
+      "name": "Total Net Sales",
+      "color": "blue"
+    },
+    {
+      "id": "CostOfSalesProducts",
+      "v": 39136,
+      "name": "Cost of Sales - Products",
+      "color": "red"
+    },
+    {
+      "id": "CostOfSalesServices",
+      "v": 6248,
+      "name": "Cost of Sales - Services",
+      "color": "red"
+    },
+    {
+      "id": "TotalCostOfSales",
+      "v": 45384,
+      "name": "Total Cost of Sales",
+      "color": "red"
+    },
+    {
+      "id": "GrossMargin",
+      "v": 36413,
+      "name": "Gross Margin",
+      "color": "green"
+    },
+    {
+      "id": "ResearchAndDevelopment",
+      "v": 4485,
+      "name": "Research and Development",
+      "color": "red"
+    },
+    {
+      "id": "SellingGeneralAndAdministrative",
+      "v": 5589,
+      "name": "Selling, General and Administrative",
+      "color": "red"
+    },
+    {
+      "id": "TotalOperatingExpenses",
+      "v": 10074,
+      "name": "Total Operating Expenses",
+      "color": "red"
+    },
+    {
+      "id": "OperatingIncome",
+      "v": 26339,
+      "name": "Operating Income",
+      "color": "green"
+    },
+    {
+      "id": "OtherIncomeExpenseNet",
+      "v": -265,
+      "name": "Other Income/(Expense) Net",
+      "color": "red"
+    },
+    {
+      "id": "IncomeBeforeTax",
+      "v": 22733,
+      "name": "Income Before Tax",
+      "color": "green"
+    },
+    {
+      "id": "ProvisionForIncomeTaxes",
+      "v": 2852,
+      "name": "Provision for Income Taxes",
+      "color": "red"
+    },
+    {
+      "id": "NetIncome",
+      "v": 19881,
+      "name": "Net Income",
+      "color": "green"
+    }
+  ],
+  "link": [
+    {
+      "from": "iPhone",
+      "to": "TotalNetSales"
+    },
+    {
+      "from": "Mac",
+      "to": "TotalNetSales"
+    },
+    {
+      "from": "iPad",
+      "to": "TotalNetSales"
+    },
+    {
+      "from": "WearablesHomeAndAccessories",
+      "to": "TotalNetSales"
+    },
+    {
+      "from": "Services",
+      "to": "TotalNetSales"
+    },
+    {
+      "from": "TotalNetSales",
+      "to": "GrossMargin"
+    },
+    {
+      "from": "TotalNetSales",
+      "to": "TotalCostOfSales"
+    },
+    {
+      "from": "GrossMargin",
+      "to": "OperatingIncome"
+    },
+    {
+      "from": "GrossMargin",
+      "to": "TotalOperatingExpenses"
+    },
+    {
+      "from": "OperatingIncome",
+      "to": "NetIncome"
+    },
+    {
+      "from": "OperatingIncome",
+      "to": "ProvisionForIncomeTaxes"
+    },
+    {
+      "from":"OtherIncome",
+      "to":"OperatingIncome"
+    }
+  ]
+}
