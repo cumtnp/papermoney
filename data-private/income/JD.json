@@ -1,0 +1,181 @@
+{
+    "title": "JD.com Inc. Q3 FY23 Income Statement",
+    "unit": "M",
+    "values": [
+        {
+            "id": "electronicsAndHomeAppliancesRevenues",
+            "v": 17036,
+            "margin": "48%",
+            "color": "gray",
+            "name": "Electronics and Home Appliances Revenues"
+        },
+        {
+            "id": "generalMerchandiseRevenues",
+            "v": 11440,
+            "margin": "32%",
+            "color": "gray",
+            "name": "General Merchandise Revenues"
+        },
+        {
+            "id": "marketplaceAndMarketingRevenues",
+            "v": 2776,
+            "margin": "8%",
+            "color": "gray",
+            "name": "Marketplace and Marketing Revenues"
+        },
+        {
+            "id": "logisticsAndOtherServiceRevenues",
+            "v": 4125,
+            "margin": "12%",
+            "color": "gray",
+            "name": "Logistics and Other Service Revenues"
+        },
+        {
+            "id": "revenue",
+            "v": 35377,
+            "color": "gray",
+            "name": "Revenue"
+        },
+        {
+            "id": "gainOnSaleOfDevelopmentProperties",
+            "v": 69,
+            "color": "green",
+            "name": "Gain on Sale of Development Properties"
+        },
+        {
+            "id": "GrossProfit",
+            "v": 5244,
+            "name": "Gross Profit",
+            "color": "green"
+        },
+        {
+            "id": "costOfRevenues",
+            "v": 30133,
+            "color": "red",
+            "name": "Cost of Revenues"
+        },
+        {
+            "id": "operatingProfit",
+            "v": 936,
+            "color": "green",
+            "name": "Operating Profit"
+        },
+        {
+            "id": "netProfit",
+            "v": 903,
+            "color": "green",
+            "name": "Net Profit"
+        },
+        {
+            "id": "other",
+            "v": 201,
+            "color": "green",
+            "name": "Other",
+            "sort":3
+        },
+        {
+            "id": "tax",
+            "v": 234,
+            "color": "red",
+            "name": "Tax"
+        },
+        {
+            "id": "operatingExpenses",
+            "v": 4377,
+            "color": "red",
+            "name": "Operating Expenses"
+        },
+        {
+            "id": "fulfillment",
+            "v": 2237,
+            "color": "red",
+            "name": "Fulfillment"
+        },
+        {
+            "id": "sAndM",
+            "v": 1166,
+            "color": "red",
+            "name": "S&M"
+        },
+        {
+            "id": "rAndD",
+            "v": 610,
+            "color": "red",
+            "name": "R&D"
+        },
+        {
+            "id": "gAndA",
+            "v": 364,
+            "color": "red",
+            "name": "G&A"
+        }
+    ],
+    "link": [
+        {
+            "from": "electronicsAndHomeAppliancesRevenues",
+            "to": "revenue"
+        },
+        {
+            "from": "generalMerchandiseRevenues",
+            "to": "revenue"
+        },
+        {
+            "from": "marketplaceAndMarketingRevenues",
+            "to": "revenue"
+        },
+        {
+            "from": "logisticsAndOtherServiceRevenues",
+            "to": "revenue"
+        },
+        {
+            "from": "gainOnSaleOfDevelopmentProperties",
+            "to": "operatingProfit"
+        },
+        {
+            "from": "revenue",
+            "to": "GrossProfit"
+        },
+        {
+            "from": "revenue",
+            "to": "costOfRevenues"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "operatingProfit",
+            "weight_function":"operatingProfit-gainOnSaleOfDevelopmentProperties"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "operatingExpenses"
+        },
+        {
+            "from": "other",
+            "to": "netProfit"
+        },
+        {
+            "from": "operatingProfit",
+            "to": "netProfit",
+            "weight_function":"netProfit-other"
+        },
+        {
+            "from": "operatingProfit",
+            "to": "tax"
+        },
+        {
+            "from": "operatingExpenses",
+            "to": "fulfillment"
+        },
+        {
+            "from": "operatingExpenses",
+            "to": "sAndM"
+        },
+        {
+            "from": "operatingExpenses",
+            "to": "rAndD"
+        },
+        {
+            "from": "operatingExpenses",
+            "to": "gAndA"
+        }
+    ]
+}

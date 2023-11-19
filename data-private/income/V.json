@@ -1,0 +1,156 @@
+{
+    "title": "Visa Inc. Income Statement, FY2023",
+    "subtitle": "(For the full year 2023, the financial calendar ends on September 30th).",
+    "unit": "M",
+    "values": [
+        {
+            "id": "ServiceRevenues",
+            "v": 14826,
+            "color": "gray",
+            "name": "Service"
+        },
+        {
+            "id": "Revenue",
+            "v": 32653,
+            "color": "gray",
+            "name": "Revenue"
+        },
+        {
+            "id": "OperatingExpense",
+            "v": 11653,
+            "color": "red",
+            "name": "Operating Expense"
+        },
+        {
+            "id": "DataProcessingRevenues",
+            "v": 16007,
+            "color": "gray",
+            "name": "Data Processing"
+        },
+        {
+            "id": "InternationalTransactionRevenues",
+            "v": 11638,
+            "color": "gray",
+            "name": "International Transaction"
+        },
+        {
+            "id": "OtherRevenues",
+            "v": 2479,
+            "color": "gray",
+            "name": "Other"
+        },
+        {
+            "id": "Tax",
+            "v": 3764,
+            "color": "red",
+            "name": "Tax"
+        },
+        {
+            "id": "Marketing",
+            "v": 1341,
+            "color": "red",
+            "name": "Marketing"
+        },
+        {
+            "id": "GAndA",
+            "v": 1330,
+            "color": "red",
+            "name": "G&A"
+        },
+        {
+            "id": "OtherExpense",
+            "v": 3151,
+            "color": "red",
+            "name": "Other Expense"
+        },
+        {
+            "id": "OperatingProfit",
+            "v": 21000,
+            "color": "green",
+            "name": "Operating Profit"
+        },
+        {
+            "id": "OtherIncome",
+            "v": 37,
+            "color": "green",
+            "name": "Other Income"
+        },
+        {
+            "id": "NetIncome",
+            "v": 17236,
+            "color": "green",
+            "name": "Net Income"
+        },
+        {
+            "id": "ClientIncentives",
+            "v": -12297,
+            "color": "red",
+            "name": "Client Incentives"
+        },
+        {
+            "id": "Personnel",
+            "v": 5831,
+            "color": "red",
+            "name": "Personnel"
+        }
+    ],
+    "link": [
+        {
+            "from": "ServiceRevenues",
+            "to": "Revenue"
+        },
+        {
+            "from": "DataProcessingRevenues",
+            "to": "Revenue"
+        },
+        {
+            "from": "InternationalTransactionRevenues",
+            "to": "Revenue"
+        },
+        {
+            "from": "OtherRevenues",
+            "to": "Revenue"
+        },
+        {
+            "from": "Revenue",
+            "to": "ClientIncentives"
+        },
+        {
+            "from": "Revenue",
+            "to": "OperatingExpense"
+        },
+        {
+            "from": "Revenue",
+            "to": "OperatingProfit"
+        },
+        {
+            "from": "OtherIncome",
+            "to": "NetIncome"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "Tax"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "NetIncome",
+            "weight_function":"NetIncome-OtherIncome"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "Personnel"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "Marketing"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "GAndA"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "OtherExpense"
+        }
+    ]
+}

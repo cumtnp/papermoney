@@ -1,0 +1,152 @@
+{
+    "title": "理想汽车 (代码2015) 2023中期收入报表",
+    "“subtitle":"合并利润表(6个月)",
+    "unit": "M",
+    "values": [
+        {
+            "id": "VehicleSales",
+            "v": 6385,
+            "margin": "98%",
+            "yoy": "160%",
+            "color": "blue",
+            "name": "Vehicle Sales"
+        },
+        {
+            "id": "OtherSalesAndServices",
+            "v": 157,
+            "margin": "2%",
+            "yoy": "-77%",
+            "color": "blue",
+            "name": "Other Sales and Services"
+        },
+        {
+            "id": "Revenue",
+            "v": 6542.0,
+            "yoy": "159.0%",
+            "color": "blue",
+            "name": "Revenue"
+        },
+        {
+            "id": "GrossProfit",
+            "v": 1388,
+            "margin": "4%",
+            "color": "blue",
+            "name": "Gross Profit"
+        },
+        {
+            "id": "CostOfRevenue",
+            "v": 5154,
+            "margin": "15%",
+            "color": "blue",
+            "name": "Cost of Revenue"
+        },
+        {
+            "id": "OperatingProfit",
+            "v": 280,
+            "margin": "1%",
+            "color": "blue",
+            "name": "Operating Profit"
+        },
+        {
+            "id": "OperatingExpenses",
+            "v": 1108,
+            "margin": "3%",
+            "color": "blue",
+            "name": "Operating Expenses"
+        },
+        {
+            "id": "NetProfit",
+            "v": 447,
+            "margin": "1%",
+            "color": "blue",
+            "name": "Net Profit"
+        },
+        {
+            "id": "Other",
+            "v": 178,
+            "color": "blue",
+            "name": "Other"
+        },
+        {
+            "id": "Tax",
+            "v": 11,
+            "margin": "0%",
+            "color": "blue",
+            "name": "Tax"
+        },
+        {
+            "id": "RnD",
+            "v": 590,
+            "margin": "2%",
+            "color": "blue",
+            "name": "R&D"
+        },
+        {
+            "id": "SnMAndGnA",
+            "v": 545,
+            "margin": "2%",
+            "color": "blue",
+            "name": "S&M, G&A"
+        },
+        {
+            "id": "OtherIncome",
+            "v": 27,
+            "color": "blue",
+            "name": "Other Income"
+        }
+    ],
+    "link": [
+        {
+            "from": "VehicleSales",
+            "to": "Revenue"
+        },
+        {
+            "from": "OtherSalesAndServices",
+            "to": "Revenue"
+        },
+        {
+            "from": "Revenue",
+            "to": "GrossProfit"
+        },
+        {
+            "from": "Revenue",
+            "to": "CostOfRevenue"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingProfit"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingExpenses"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "NetProfit"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "Other"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "Tax"
+        },
+        {
+            "from": "OperatingExpenses",
+            "to": "RnD"
+        },
+        {
+            "from": "OperatingExpenses",
+            "to": "SnMAndGnA"
+        },
+        {
+            "from": "OperatingExpenses",
+            "to": "OtherIncome"
+        },
+        {
+            "from": "Other",
+            "to": "NetProfit"
+        }
+    ]
+}

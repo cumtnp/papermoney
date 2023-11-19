@@ -1,22 +1,18 @@
 {
   "title": "Apple Inc. Q3 FY23 Income Statement",
-  "logo":"https://images.crowdspring.com/blog/wp-content/uploads/2022/08/18131304/apple_logo_black.svg_.png",
+  "logo":"apple_logo.png",
   "unit": "M",
   "values": [
     {
       "id": "iPhone",
       "v": 39669,
       "name": "iPhone",
-      "margin":0.484,
-      "yy": 0.1,
       "color": "blue"
     },
     {
       "id": "Mac",
       "v": 6840,
       "name": "Mac",
-      "margin":0.484,
-      "yy":-0.01,
       "color": "blue"
     },
     {
@@ -81,20 +77,20 @@
     },
     {
       "id": "TotalOperatingExpenses",
-      "v": 10074,
+      "v": 13415,
       "name": "Total Operating Expenses",
       "color": "red"
     },
     {
       "id": "OperatingIncome",
-      "v": 26339,
+      "v": 22998,
       "name": "Operating Income",
       "color": "green"
     },
     {
       "id": "OtherIncomeExpenseNet",
       "v": -265,
-      "name": "Other Income/(Expense) Net",
+      "name": "Other Expense",
       "color": "red"
     },
     {
@@ -106,7 +102,7 @@
     {
       "id": "ProvisionForIncomeTaxes",
       "v": 2852,
-      "name": "Provision for Income Taxes",
+      "name": "Tax",
       "color": "red"
     },
     {
@@ -162,8 +158,8 @@
       "to": "ProvisionForIncomeTaxes"
     },
     {
-      "from":"OtherIncome",
-      "to":"OperatingIncome"
+      "from": "OperatingIncome",
+      "to": "OtherIncomeExpenseNet"
     }
   ]
 }

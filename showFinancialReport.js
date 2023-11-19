@@ -1,213 +1,280 @@
+import DataManager from './datamanager.js';
 
+import { JSDOM } from 'jsdom';
+import { sankey, sankeyLinkHorizontal, sankeyCenter } from 'd3-sankey';
+import * as d3 from 'd3';
+import sharp from 'sharp';
+import fs from 'fs'; // 使用 import 替代 require
+import path from 'path';
 
+import { fileURLToPath } from 'url';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+// 创建 JSDOM 实例
+const dom = new JSDOM(`<!DOCTYPE html><body></body>`);
+const document = dom.window.document;
+const { XMLSerializer } = dom.window;
 
-export function showCompay(conpamyName, symbol, reportDate) {
-    DataManager.getInstance(conpamyName).getDataBySymble(symbol, 'INCOME_STATEMENT', reportDate, function (incomChartDatas) {
-        console.log(incomChartDatas);
-        var containerId = createNewContainer(incomChartDatas.title, incomChartDatas.logo);
-        drawIncomeChart(incomChartDatas, containerId);
-    });
+export function showCompany(companyName, symbol, reportDate) {
+    const reportTypes = ['INCOME_STATEMENT', 'CASH_FLOW', 'BALANCE_SHEET'];
 
-    DataManager.getInstance(conpamyName).getDataBySymble(symbol, 'CASH_FLOW', reportDate, function (incomChartDatas) {
-        console.log(incomChartDatas);
-        var containerId = createNewContainer(incomChartDatas.title, incomChartDatas.logo);
-        drawIncomeChart(incomChartDatas, containerId);
-    });
-
-    DataManager.getInstance(conpamyName).getDataBySymble(symbol, 'BALANCE_SHEET', reportDate, function (incomChartDatas) {
-        console.log(incomChartDatas);
-        var containerId = createNewContainer(incomChartDatas.title, incomChartDatas.logo);
-        drawIncomeChart(incomChartDatas, containerId);
+    reportTypes.forEach((reportType, index) => {
+        DataManager.getInstance(companyName).getDataBySymbol(symbol, reportType, reportDate, incomeChartData => {
+            if (incomeChartData) {
+                const chartName = `${companyName}(${symbol})-${reportType}-${reportDate}`;
+                drawChart(incomeChartData, chartName, companyName, reportDate);
+            } else {
+                console.log('No data for ', companyName, symbol, reportType, reportDate);
+            }
+        });
     });
 }
 
-// This function creates a new container and returns the id of the new container
-function createNewContainer(title, logoUrl) {
-    var containerId = 'container-' + $('.container').length; // Create a new ID based on existing containers
-    var $newContainer = $(`<div class='container'><div class="container-title"><img class="company-logo"></img><H1>${title}</H1></div><div id=${containerId} class="chart"></div></div>`); // Create a new div with the container class
-    $('#chat-lists').append($newContainer);
-    if (logoUrl) {
-        $newContainer.find('.company-logo').attr('src', logoUrl);
+// showCompany('google', 'Alphabet', '2023Q3');
+// showCompany('apple', 'AAPL', '2023Q2');
+// showCompany('xiaomi', 'XIAOMI', '2023Q3');
+// showCompany('tencent', 'TENCENT', '2023Q3');
+// showCompany('amazon', 'Amazon', '2023Q3');
+// showCompany('NVDIA', 'NVIDIA', '2023Q3');
+// showCompany('Facebook', 'META', '2023Q3');
+// showCompany('Lilly', 'LLY', '2023Q3');
+// showCompany('Visa','V','2023Q3');
+// showCompany('Walmart', 'WMT', '2023Q3');
+// showCompany('ExxonMobil', 'XOM', '2023Q3');
+// showCompany('chinaMobile', 'CHLKF', "2023Q3");
+// showCompany('meituan', 'MPNGY', "2023Q3");
+// showCompany('jd', 'JD', "2023Q3");
+showCompany('LiXiang', 'LXEH', "2023Q3");
+
+
+
+function drawChart(data, chartName, company, reportDate) {
+
+    var unit = data.unit;
+    var currency = data.currency;
+    var unit_t = data.unit_t;
+    // Append a background rect to the SVG
+
+    var picWidht = 4296;
+    var picHeight = 2416;
+
+    const titleHeight = 120; // Height of the title area
+    const titleMargin = 240; // Margin around the title and icon
+    const iconWidth = 40; // Assuming a square icon for simplicity
+
+
+    var nodeWidth = 80;
+    var nodePadding = 260;
+
+    const svgId = `svg-${chartName}`;
+    const svg = d3.select(document.body).append('svg')
+        .attr('id', svgId)
+        .attr('width', picWidht)
+        .attr('height', picHeight);
+
+    // Append a background rect to the SVG
+    svg.append('rect')
+        .attr('width', picWidht)
+        .attr('height', picHeight)
+        .attr('fill', '#F5F5F5');
+
+    // Add an icon to the title group
+
+
+    // 创建仅包含标题的组
+    const titleGroup = svg.append('g')
+        .attr('transform', `translate(${picWidht / 2}, ${titleMargin})`);
+
+    // 添加标题文本
+    titleGroup.append('text')
+        .attr('x', 0) // 水平居中
+        .attr('y', titleHeight / 2) // 垂直居中于标题区域
+        .attr('alignment-baseline', 'middle')
+        .attr('text-anchor', 'middle') // 文本中心对齐
+        .attr('font-size', '120px') // 字体大小
+        .attr('fill', '#444444') // 字体颜色
+        .attr('font-weight', 'bold') // 字体加粗
+        .text(data.title); // 动态标题
+    console.log(data.subtitle);
+    if (data.subtitle) {
+        // 添加副标题
+        titleGroup.append('text')
+            .attr('x', 0) // 水平居中
+            .attr('y', titleHeight + 32) // 在主标题下方
+            .attr('alignment-baseline', 'middle')
+            .attr('text-anchor', 'middle') // 文本中心对齐
+            .attr('font-size', '64px') // 副标题字体大小，可以根据需要调整
+            .attr('fill', '#999') // 副标题字体颜色，可以根据需要调整
+            .text(data.subtitle); // 动态副标题
     }
-    return containerId;
-}
 
-
-function drawIncomeChart(data, containerId) {
-
-    var nodeWidth = 30;
-    var nodePadding = 90;
-    // 画布
-    const margin = { top: 80, right: 200, bottom: 80, left: 200 }; // 增加左右边距
-    // 最小图表尺寸
-    const minWidth = 1400;
-    const minHeight = 800;
-
-    // 计算最小宽高比
-    const aspectRatio = minWidth / minHeight;
-
-    // 父容器的尺寸
-
-    const container = $('#' + containerId);
-    const containerWidth = container.width();
-    const containerHeight = container.height();
-    let chartWidth = containerWidth - margin.left - margin.right;
-    let chartHeight = containerHeight - margin.top - margin.bottom;
-    // 根据最小宽高比调整图表尺寸
-    if (chartWidth / chartHeight > aspectRatio) {
-        // 如果容器比较宽，则根据容器高度调整图表宽度
-        chartWidth = chartHeight * aspectRatio;
-    } else {
-        // 如果容器比较高，则根据容器宽度调整图表高度
-        chartHeight = chartWidth / aspectRatio;
-    }
-    console.log(containerWidth, containerHeight, chartWidth, chartHeight);
-    // 确保图表不小于最小尺寸
-    chartWidth = Math.max(chartWidth, minWidth);
-    chartHeight = Math.max(chartHeight, minHeight);
-
-    const width = chartWidth; // 增加宽度以适应边距
-    const height = chartHeight; // 如果需要，也可以增加高度
-    const unit = data.unit;
-    const currency = 'USD';
-    const svg = d3
-        .select('#' + containerId)
-        .append('svg')
-        .attr('width', width)
-        .attr('height', height);
-
-    // 图
-    const chart = svg.append('g').attr('transform', `translate(${margin.left}, ${margin.top})`);
-
-    // 更新Sankey布局的size属性来匹配新的内部尺寸
-    const sankey = d3
-        .sankey()
-        .nodeWidth(nodeWidth)
-        .nodePadding(nodePadding)
-        .nodeAlign(d3.sankeyCenter)
-        .size([width - margin.left - margin.right, height - margin.top - margin.bottom])
-        .nodeId((d) => d.id);
-
-    sankey.nodeSort(function (a, b) {
-        return b.sort - a.sort;
-    });
-
-    const { nodes, links } = sankey({
+    // 桑基图数据
+    const graph = {
         nodes: data.nodes,
         links: data.links
-    });
+    };
 
-    const layerNodeCounts = {};
+    try {
+        // 创建桑基图布局
+        const margin = { top: 180, right: 360, bottom: 180, left: 360 };
+        const chart = svg.append('g')
+            .attr('transform', `translate(${margin.left}, ${margin.top + titleMargin + titleHeight * 1.5})`);;
 
-    // 计算每个layer中的节点数量
-    nodes.forEach(node => {
-        layerNodeCounts[node.layer] = (layerNodeCounts[node.layer] || 0) + 1;
-    });
+        const chartWidth = picWidht - margin.left - margin.right;
+        const chartHeight = picHeight - titleMargin - titleHeight * 1.5 - margin.top - margin.bottom;
 
-    chart
-        .append('g')
-        .selectAll()
-        .data(nodes)
-        .join('g')
-        .attr('class', 'node')
-        .attr('indexName', (d) => d.name)
-        .append('rect')
-        .attr('fill', (d, i) => d.color)
-        .attr('x', (d) => d.x0)
-        .attr('y', (d) => d.y0)
-        .attr('height', (d) => d.y1 - d.y0)
-        .attr('width', (d) => d.x1 - d.x0)
-        .append('title')
-        .text((d) => `${d.name}`)
+        const sankeyGenerator = sankey()
+            .nodeWidth(nodeWidth)
+            .nodePadding(nodePadding)
+            .nodeAlign(sankeyCenter)
+            .size([chartWidth, chartHeight])
+            .nodeId(d => d.id)
+            .linkSort(function (a, b) {
+                return b.sort - a.sort;
+            })
+            .nodeSort(function (a, b) {
+                return b.sort - a.sort;
+            });
 
-    // 假设links是按顺序排列的
-    var yOffset = {}; // 存储每个节点的y偏移量
+        sankeyGenerator(graph);
 
-    // 初始化y偏移量
-    links.forEach(function (link) {
-        if (!yOffset[link.source.name]) yOffset[link.source.name] = link.source.y0;
-        if (!yOffset[link.target.name]) yOffset[link.target.name] = link.target.y0;
-    });
-    chart
-        .append('g')
-        .attr('fill', 'none')
-        .selectAll()
-        .data(links)
-        .join('path')
-        .attr('class', 'link')
-        .attr('d', d3.sankeyLinkHorizontal())
-        .attr('indexName', (d) => d.source.name + '-' + d.target.name)
-        .attr('stroke', (d, i) => d.color)
-        .attr('stroke-width', (d) => Math.max(1, d.width)) // 确保最小宽度是2px
-        .attr('stroke-opacity', '1.0')
-        .append('title')
-        .text((d) => `${d.value.toLocaleString()}`)
+        // 遍历所有节点来计算每个层级的节点数量
+        const layerNodeCounts = {};
 
-    // 绘制标签
-    const nodeGroups = chart
-        .append('g')
-        .selectAll('g.node')
-        .data(nodes)
-        .enter()
-        .append('g')
-        .attr('class', 'node');
+        graph.nodes.forEach(node => {
+            layerNodeCounts[node.depth] = (layerNodeCounts[node.depth] || 0) + 1;
+        });
 
-    nodeGroups
-        .append('rect')
-        .attr('fill', (d, i) => d.color)
-        .attr('x', (d) => d.x0)
-        .attr('y', (d) => d.y0)
-        .attr('height', (d) => d.y1 - d.y0)
-        .attr('width', (d) => d.x1 - d.x0);
+        // 基于最大层级节点数量来调整nodePadding
+        const maxNodesInALayer = Math.max(...Object.values(layerNodeCounts));
 
-    // Append the title for each node
-    // 绘制标题
-    nodeGroups
-        .append('text')
-        .attr('class', 'chart-node-title')
-        .attr('x', (d) => determineXPosition(d))
-        .attr('y', (d) => determineYPosition(d))
-        .attr('fill', (d) => d.color)
-        .attr('text-anchor', (d) => determineTextAnchor(d))
-        .attr('alignment-baseline', 'middle')
-        .attr('dy', '0.35em') // 垂直居中对齐文本
-        .text((d) => d.desc)
+        // 如果节点数量较少，使用较大的padding
+        nodePadding = Math.max(160, Math.min(240, 240 * 5 / maxNodesInALayer));
+        console.log('maxNodesInALayer，nodePadding:', maxNodesInALayer, nodePadding);
 
-    // 绘制金额
-    nodeGroups
-        .append('text')
-        .attr('class', 'chart-node-desc')
-        .attr('x', (d) => determineXPosition(d))
-        .attr('y', (d) => determineYPosition(d) + 20) // 在标题下方一定距离
-        .attr('text-anchor', (d) => determineTextAnchor(d))
-        .attr('alignment-baseline', 'middle')
-        .attr('dy', '0.35em') // 垂直居中对齐文本
-        .text((d) => formatAmount(d.v, unit))
-        .attr('fill', (d) => d.color)
+        sankeyGenerator.nodePadding(nodePadding);
+        sankeyGenerator(graph);
 
-    // 绘制Margin
-    nodeGroups
-        .filter((d) => d.margin !== undefined)
-        .append('text')
-        .attr('class', 'chart-node-margin')
-        .attr('x', (d) => determineXPosition(d))
-        .attr('y', (d) => determineYPosition(d) + 42) // 在YY下方一定距离
-        .attr('text-anchor', (d) => determineTextAnchor(d))
-        .attr('alignment-baseline', 'middle')
-        .text((d) => formatPercentage(d.margin))
+        chart
+            .append('g')
+            .selectAll()
+            .data(graph.nodes)
+            .join('g')
+            .attr('class', 'node')
+            .attr('indexName', (d) => d.name)
+            .append('rect')
+            .attr('fill', (d, i) => d.color)
+            .attr('x', (d) => d.x0)
+            .attr('y', (d) => d.y0)
+            .attr('height', (d) => d.y1 - d.y0)
+            .attr('width', (d) => d.x1 - d.x0)
+            .append('title')
+            .text((d) => `${d.name}`)
 
-    // 绘制YY
-    nodeGroups
-        .filter((d) => d.yy !== undefined)
-        .append('text')
-        .attr('class', 'chart-node-yy')
-        .attr('x', (d) => determineXPosition(d))
-        .attr('y', (d) => determineYPosition(d) + 58) // 在金额下方一定距离
-        .attr('text-anchor', (d) => determineTextAnchor(d))
-        .attr('alignment-baseline', 'middle')
-        .text((d) => formatYY(d.yy))
+        chart
+            .append('g')
+            .attr('fill', 'none')
+            .selectAll()
+            .data(graph.links)
+            .join('path')
+            .attr('class', 'link')
+            .attr('d', sankeyLinkHorizontal())
+            .attr('indexName', (d) => d.source.name + '-' + d.target.name)
+            .attr('stroke', (d, i) => d.color)
+            .attr('stroke-width', (d) => Math.max(1, d.width)) // 确保最小宽度是2px
+            .attr('stroke-opacity', '1.0')
+            .append('title')
 
+        // 绘制标签
+        const nodeGroups = chart
+            .append('g')
+            .selectAll('g.node')
+            .data(graph.nodes)
+            .enter()
+            .append('g')
+            .attr('class', 'node');
+
+        nodeGroups
+            .append('rect')
+            .attr('fill', (d, i) => d.color)
+            .attr('x', (d) => d.x0)
+            .attr('y', (d) => d.y0)
+            .attr('height', (d) => d.y1 - d.y0)
+            .attr('width', (d) => d.x1 - d.x0);
+
+        // Append the title for each node
+        // 绘制标题
+        nodeGroups
+            .append('text')
+            .attr('class', 'chart-node-title')
+            .attr('x', (d) => determineXPosition(d))
+            .attr('y', (d) => determineYPosition(d, nodePadding))
+            .attr('fill', (d) => d.color)
+            .attr('text-anchor', (d) => determineTextAnchor(d))
+            .attr('alignment-baseline', 'middle')
+            .attr('font-family', 'sans-serif')
+            .attr('font-size', '48px')
+            .attr('dy', '0.35em') // 垂直居中对齐文本
+            .text((d) => d.desc)
+
+        // 绘制金额
+        nodeGroups
+            .append('text')
+            .attr('class', 'chart-node-desc')
+            .attr('x', (d) => determineXPosition(d))
+            .attr('y', (d) => determineYPosition(d, nodePadding) + 60) // 在标题下方一定距离
+            .attr('text-anchor', (d) => determineTextAnchor(d))
+            .attr('alignment-baseline', 'middle')
+            .attr('dy', '0.35em') // 垂直居中对齐文本
+            .text((d) => formatAmount(d.v, unit, currency, unit_t))
+            .attr('font-size', '48px')
+            .attr('font-weight', 'bold')
+            .attr('font-family', 'sans-serif')
+            .attr('fill', (d) => d.color)
+
+        // 绘制Margin
+        nodeGroups
+            .filter((d) => d.margin !== undefined)
+            .append('text')
+            .attr('class', 'chart-node-margin')
+            .attr('x', (d) => determineXPosition(d))
+            .attr('y', (d) => determineYPosition(d, nodePadding) + 124) // 在YY下方一定距离
+            .attr('text-anchor', (d) => determineTextAnchor(d))
+            .attr('alignment-baseline', 'middle')
+            .attr('font-size', '40px')
+            .attr('fill', '#666')
+            .text((d) => formatPercentage(d.margin))
+
+
+        // 将 SVG 序列化为字符串
+        const svgString = new XMLSerializer().serializeToString(document.getElementById(svgId));
+
+        // Convert the SVG string to a Buffer for sharp
+        const svgBuffer = Buffer.from(svgString);
+
+        // Use sharp to convert the SVG buffer to a PNG buffer
+        sharp(svgBuffer)
+            .png({
+                quality: 100,
+                compressionLevel: 9,// Set quality and compression level
+                density: 300 // Higher DPI (default is 72)
+            })
+            .toBuffer()
+            .then(highResBuffer => {
+                const companyDir = `./public-img/${company}`;
+                if (!fs.existsSync(companyDir)) {
+                    fs.mkdirSync(companyDir, { recursive: true });
+                }
+                // Write the high-resolution buffer to a file
+                const filePath = path.join(companyDir, `${chartName}.png`);
+                fs.writeFileSync(filePath, highResBuffer);
+                console.log(`Chart saved:`, filePath);
+            })
+            .catch(err => console.error('Error converting image:', err));
+
+    } catch (err) {
+        console.log(err);
+    }
 
 }
 
@@ -223,7 +290,7 @@ function determineXPosition(d) {
 }
 
 // Helper function to determine y position based on leaf property
-function determineYPosition(d) {
+function determineYPosition(d, nodePadding) {
     // 垂直居中位置
     // 如果leaf为'l'或'r'，标签放在节点垂直中心
     if (d.leaf === 'l' || d.leaf === 'r') {
@@ -231,11 +298,11 @@ function determineYPosition(d) {
     }
     // 否则，标签放在节点上方
     else {
-        var top = 40;
+        var top = 60 + nodePadding / 4;
         if (d.yy)
-            top = top + 16;
+            top = top + 32;
         if (d.margin)
-            top = top + 16;
+            top = top + 32;
         return d.y0 - top;
     }
 }
@@ -252,22 +319,38 @@ function determineTextAnchor(d) {
 }
 
 // Helper function to format amount
-function formatAmount(amount, unit = 'D') {
+function formatAmount(amount, unit = 'D', currency = 'USD', unit_t = 'B') {
     // 检测金额是否为负数
     const isNegative = amount < 0;
     // 取绝对值以便于格式化
     const absoluteAmount = Math.abs(amount);
 
     let formattedAmount;
-    if (unit === 'D') {
-        formattedAmount = `$${(absoluteAmount / 1e9).toFixed(1)}B`;
-    } else if (unit === 'M') {
-        formattedAmount = `$${(absoluteAmount / 1e3).toFixed(1)}B`;
-    } else if (unit === 'B') {
-        formattedAmount = `$${absoluteAmount.toFixed(1)}B`;
+    let c = currency === 'RMB' ? '¥' : '$';
+    if (unit_t === 'B') {
+        if (unit === 'D') {
+            formattedAmount = `${c}${(absoluteAmount / 1e9).toFixed(1)}B`;
+        } else if (unit === 'M') {
+            formattedAmount = `${c}${(absoluteAmount / 1e3).toFixed(1)}B`;
+        } else if (unit === 'B') {
+            formattedAmount = `${c}${absoluteAmount.toFixed(1)}B`;
+        } else {
+            formattedAmount = `${c}${absoluteAmount.toFixed(1)}`;
+        }
+    } else if (unit_t === 'M') {
+        if (unit === 'D') {
+            formattedAmount = `${c}${(absoluteAmount / 1e6).toFixed(1)}M`;
+        } else if (unit === 'M') {
+            formattedAmount = `${c}${(absoluteAmount / 1).toFixed(1)}M`;
+        } else if (unit === 'B') {
+            formattedAmount = `${c}${absoluteAmount.toFixed(1) * 1e3}M`;
+        } else {
+            formattedAmount = `${c}${absoluteAmount.toFixed(1)}`;
+        }
     } else {
-        formattedAmount = `$${absoluteAmount.toFixed(1)}`;
+        formattedAmount = `${c}${absoluteAmount.toFixed(1)}`;
     }
+
 
     // 如果金额为负数，加上括号
     return isNegative ? `(${formattedAmount})` : formattedAmount;
@@ -277,7 +360,18 @@ function formatAmount(amount, unit = 'D') {
 function formatPercentage(value) {
     // 如果值已经是百分比形式，直接返回
     if (typeof value === 'string' && value.includes('%')) {
-        return value;
+        var unit = '';
+        if (value.endsWith('%')) {
+            unit = ' margin';
+
+        } if (value.startsWith('-')) {
+            // 移除负号并在百分比后添加 'margin'
+            return value.slice(1) + unit;
+        } else {
+            // 直接在百分比后添加 'margin'
+            return value + unit;
+        }
+
     }
     // 如果值是数字，转换成百分比
     return (value * 100).toFixed(2) + '% margin';
@@ -308,22 +402,32 @@ function formatYY(value) {
     // 如果不符合以上条件，则返回空字符串，表示不显示
     return '';
 }
-// // Define the custom link generator function
-// function customSankeyLinkHorizontal(link, yOffset) {
-//     console.log("drawLink: ",link);
-//     // 计算起点
-//     var startY = yOffset[link.source.name] + link.width / 2;
-//     yOffset[link.source.name] += link.width; // 更新源节点的y偏移量
 
-//     // 计算终点
-//     var endY = yOffset[link.target.name] + link.width / 2;
-//     yOffset[link.target.name] += link.width; // 更新目标节点的y偏移量
 
-//     var start = { x: link.source.x1, y: startY };
-//     var end = { x: link.target.x0, y: endY };
+// Function to get the MIME type based on file extension
+function getMimeType(filePath) {
+    const ext = path.extname(filePath).toLowerCase();
+    switch (ext) {
+        case '.png':
+            return 'image/png';
+        case '.webp':
+            return 'image/webp';
+        case '.svg':
+        case '.svgz':
+            return 'image/svg+xml';
+        default:
+            throw new Error('Unsupported image type');
+    }
+}
 
-//     var midX = (start.x + end.x) / 2;
+// Read the image file and convert it to Base64
+function getImageBase64(filePath) {
+    try {
+        const mimeType = getMimeType(filePath);
+        const imageFile = fs.readFileSync(filePath);
+        return `data:${mimeType};base64,${Buffer.from(imageFile).toString('base64')}`;
+    } catch (err) {
+        return null;
+    }
 
-//     var pathData = `M${start.x},${start.y} C${midX},${start.y} ${midX},${end.y} ${end.x},${end.y}`;
-//     return pathData;
-// }
+}

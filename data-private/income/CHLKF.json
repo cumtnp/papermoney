@@ -1,0 +1,153 @@
+{
+    "title": "China Mobile Ltd. 2023 Q1-Q3 Income Statement",
+    "subtitle": "China Mobile (Stock Code 941) - 2023 Q1-Q3 Combined Financial Performance",
+    "unit": "M",
+    "currency": "RMB",
+    "values": [
+        {
+            "id": "CommunicationService",
+            "v": 664557,
+            "margin": "85.7%",
+            "color": "gray",
+            "name": "Communication Service"
+        },
+        {
+            "id": "ProductSales",
+            "v": 111003,
+            "margin": "14.3%",
+            "color": "gray",
+            "name": "Product Sales"
+        },
+        {
+            "id": "Revenue",
+            "v": 775560.0,
+            "margin": "7.2% YY",
+            "color": "gray",
+            "name": "Revenue"
+        },
+        {
+            "id": "OperatingProfit",
+            "v": 113457,
+            "margin": "15%",
+            "color": "green",
+            "name": "Operating Profit"
+        },
+        {
+            "id": "Other",
+            "v": 24391,
+            "color": "green",
+            "name": "Other"
+        },
+        {
+            "id": "OperatingExpenses",
+            "v": 662103,
+            "margin": "85%",
+            "color": "red",
+            "name": "Operating Expenses"
+        },
+        {
+            "id": "NetProfit",
+            "v": 105611,
+            "margin": "14%",
+            "color": "green",
+            "name": "Net Profit"
+        },
+        {
+            "id": "Tax",
+            "v": 32237,
+            "color": "red",
+            "name": "Tax"
+        },
+        {
+            "id": "NetworkOperationsAndSupportCosts",
+            "v": 205485,
+            "color": "red",
+            "name": "Network Operations and Support Costs"
+        },
+        {
+            "id": "EmployeeCompensationAndRelatedCosts",
+            "v": 104605,
+            "color": "red",
+            "name": "Employee Compensation and Related Costs"
+        },
+        {
+            "id": "CostOfSales",
+            "v": 109182,
+            "color": "red",
+            "name": "Cost of Sales"
+        },
+        {
+            "id": "DepreciationAndAmortization",
+            "v": 155038,
+            "color": "red",
+            "name": "Depreciation and Amortization"
+        },
+        {
+            "id": "SalesExpenses",
+            "v": 38934,
+            "color": "red",
+            "name": "Sales Expenses"
+        },
+        {
+            "id": "OtherOperatingExpenses",
+            "v": 48859,
+            "color": "red",
+            "name": "Other Operating Expenses"
+        }
+    ],
+    "link": [
+        {
+            "from": "CommunicationService",
+            "to": "Revenue"
+        },
+        {
+            "from": "ProductSales",
+            "to": "Revenue"
+        },
+        {
+            "from": "Revenue",
+            "to": "OperatingProfit"
+        },
+        {
+            "from": "Revenue",
+            "to": "OperatingExpenses"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "NetProfit",
+            "weight_function":"NetProfit-Other"
+        },
+        {
+            "from": "Other",
+            "to": "NetProfit"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "Tax"
+        },
+        {
+            "from": "OperatingExpenses",
+            "to": "NetworkOperationsAndSupportCosts"
+        },
+        {
+            "from": "OperatingExpenses",
+            "to": "EmployeeCompensationAndRelatedCosts"
+        },
+        {
+            "from": "OperatingExpenses",
+            "to": "CostOfSales"
+        },
+        {
+            "from": "OperatingExpenses",
+            "to": "DepreciationAndAmortization"
+        },
+        {
+            "from": "OperatingExpenses",
+            "to": "SalesExpenses"
+        },
+        {
+            "from": "OperatingExpenses",
+            "to": "OtherOperatingExpenses"
+        }
+    ]
+}

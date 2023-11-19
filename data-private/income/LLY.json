@@ -1,0 +1,166 @@
+{
+    "title": "Eli Lilly and Company. Q3 FY23 Income Statement",
+    "unit": "M",
+    "values": [
+        {
+            "id": "DiabetesRevenue",
+            "v": 4720,
+            "color": "blue",
+            "name": "Diabetes Revenue"
+        },
+        {
+            "id": "OncologyRevenue",
+            "v": 1747,
+            "color": "blue",
+            "name": "Oncology Revenue"
+        },
+        {
+            "id": "ImmunologyRevenue",
+            "v": 987,
+            "color": "blue",
+            "name": "Immunology Revenue"
+        },
+        {
+            "id": "NeuroscienceRevenue",
+            "v": 1768.1,
+            "color": "blue",
+            "name": "Neuroscience Revenue"
+        },
+        {
+            "id": "OthersRevenue",
+            "v": 276,
+            "color": "blue",
+            "name": "Others Revenue"
+        },
+        {
+            "id": "TotalRevenue",
+            "v": 9499,
+            "color": "blue",
+            "name": "Total Revenue"
+        },
+        {
+            "id": "CostOfRevenue",
+            "v": 1860,
+            "color": "red",
+            "name": "Cost of Revenue"
+        },
+        {
+            "id": "GrossProfit",
+            "v": 7639,
+            "color": "green",
+            "name": "Gross Profit",
+            "sort": -1
+        },
+        {
+            "id": "OperatingExpense",
+            "v": 7211,
+            "color": "red",
+            "name": "Operating Expense"
+        },
+        {
+            "id": "RDExpense",
+            "v": 2409,
+            "color": "red",
+            "name": "R&D Expense"
+        },
+        {
+            "id": "MarketingSellingAdminExpense",
+            "v": 1804,
+            "color": "red",
+            "name": "Marketing, Selling & Admin "
+        },
+        {
+            "id": "AcquiredInProcessRD",
+            "v": 2975,
+            "color": "red",
+            "name": "Acquired in-process R&D"
+        },
+        {
+            "id": "OtherExpense",
+            "v": 23,
+            "color": "red",
+            "name": "Other Expense"
+        },
+        {
+            "id": "OperatingProfit",
+            "v": 427,
+            "color": "green",
+            "name": "Operating Profit",
+            "sort": -1
+        },
+        {
+            "id": "Tax",
+            "v": 485,
+            "color": "red",
+            "name": "Tax"
+        },
+        {
+            "id": "NetLoss",
+            "v": -57,
+            "color": "red",
+            "name": "Net Loss"
+        }
+    ],
+    "link": [
+        {
+            "from": "DiabetesRevenue",
+            "to": "TotalRevenue"
+        },
+        {
+            "from": "OncologyRevenue",
+            "to": "TotalRevenue"
+        },
+        {
+            "from": "ImmunologyRevenue",
+            "to": "TotalRevenue"
+        },
+        {
+            "from": "NeuroscienceRevenue",
+            "to": "TotalRevenue"
+        },
+        {
+            "from": "OthersRevenue",
+            "to": "TotalRevenue"
+        },
+        {
+            "from": "TotalRevenue",
+            "to": "CostOfRevenue"
+        },
+        {
+            "from": "TotalRevenue",
+            "to": "GrossProfit"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingExpense"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "RDExpense"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "MarketingSellingAdminExpense"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "AcquiredInProcessRD"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "OtherExpense"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingProfit"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "Tax"
+        },
+        {
+            "from": "NetLoss",
+            "to": "Tax"
+        }
+    ]
+}

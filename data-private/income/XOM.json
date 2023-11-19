@@ -1,0 +1,165 @@
+{
+    "title": "Exxon Mobil Corporation. Q3 FY23 Income Statement",
+    "unit": "M",
+    "values": [
+        {
+            "id": "Upstream",
+            "v": 6011,
+            "color": "blue",
+            "name": "UpStream"
+        },
+        {
+            "id": "Revenue",
+            "v": 88570,
+            "color": "blue",
+            "name": "Revenue"
+        },
+        {
+            "id": "CostOfRevenue",
+            "v": 53076,
+            "color": "red",
+            "name": "Cost of Revenue"
+        },
+        {
+            "id": "EnergyProduction",
+            "v": 72546,
+            "color": "blue",
+            "name": "Energy Production"
+        },
+        {
+            "id": "GrossProfit",
+            "v": 35494,
+            "color": "green",
+            "name": "Gross Profit"
+        },
+        {
+            "id": "OtherIncomes",
+            "v": 2190,
+            "color": "green",
+            "name": "Other incomes"
+        },
+        {
+            "id": "OperatingProfit",
+            "v": 11509,
+            "color": "green",
+            "name": "Operating Profit"
+        },
+        {
+            "id": "Tax",
+            "v": 4353,
+            "color": "red",
+            "name": "Tax"
+        },
+        {
+            "id": "NetIncome",
+            "v": 9346,
+            "color": "green",
+            "name": "Net Income"
+        },
+        {
+            "id": "OperatingExpense",
+            "v": 23985,
+            "color": "red",
+            "name": "Operating Expense"
+        },
+        {
+            "id": "ProductionAndManufacturing",
+            "v": 8696,
+            "color": "red",
+            "name": "P&M"
+        },
+        {
+            "id": "ChemicalProducts",
+            "v": 5481,
+            "color": "blue",
+            "name": "Chemical Products"
+        },
+        {
+            "id": "SpecialtyProductsAndOthers",
+            "v": 4532,
+            "color": "blue",
+            "name": "SpecialtyProducts & Others"
+        },
+        {
+            "id": "SGandA",
+            "v": 2489,
+            "color": "red",
+            "name": "SG&A"
+        },
+        {
+            "id": "DepreciationAndDepletion",
+            "v": 4415,
+            "color": "red",
+            "name": "Depreciation & Depletion"
+        },
+        {
+            "id": "OtherCostsAndDeductions",
+            "v": 8385,
+            "color": "red",
+            "name": "OtherCosts & Deductions"
+        }
+    ],
+    "link": [
+        {
+            "from": "Upstream",
+            "to": "Revenue"
+        },
+        {
+            "from": "EnergyProduction",
+            "to": "Revenue"
+        },
+        {
+            "from": "ChemicalProducts",
+            "to": "Revenue"
+        },
+        {
+            "from": "SpecialtyProductsAndOthers",
+            "to": "Revenue"
+        },
+        {
+            "from": "Revenue",
+            "to": "GrossProfit"
+        },
+        {
+            "from": "Revenue",
+            "to": "CostOfRevenue"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingProfit"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingExpense"
+        },
+        {
+            "from": "OtherIncomes",
+            "to": "NetIncome"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "NetIncome",
+            "weight_function":"NetIncome-OtherIncomes"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "Tax"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "ProductionAndManufacturing"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "SGandA"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "DepreciationAndDepletion"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "OtherCostsAndDeductions"
+        }
+    ]
+}

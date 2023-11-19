@@ -1,0 +1,156 @@
+{
+    "title": "NVIDIA Income Statement, for 3 months ended July 30, 2023 ",
+    "source": "  https://www.sec.gov/ix?doc=/Archives/edgar/data/1045810/000104581023000175/nvda-20230730.htm",
+    "unit": "M",
+    "values": [
+        {
+            "id": "DataCenter",
+            "v": 10323,
+            "color": "green",
+            "name": "Data Center"
+        },
+        {
+            "id": "Revenue",
+            "v": 13507,
+            "color": "green",
+            "name": "Revenue"
+        },
+        {
+            "id": "CostOfRevenue",
+            "v": 4045,
+            "color": "red",
+            "name": "Cost of Revenue"
+        },
+        {
+            "id": "Gaming",
+            "v": 2486,
+            "color": "green",
+            "name": "Gaming"
+        },
+        {
+            "id": "GrossProfit",
+            "v": 9462,
+            "color": "green",
+            "name": "Gross Profit"
+        },
+        {
+            "id": "OperatingExpense",
+            "v": 2662,
+            "color": "red",
+            "name": "Operating Expense"
+        },
+        {
+            "id": "ProfessionalVisualization",
+            "v": 379,
+            "color": "green",
+            "name": "Professional Visualization"
+        },
+        {
+            "id": "Automotive",
+            "v": 253,
+            "color": "green",
+            "name": "Automotive"
+        },
+        {
+            "id": "OperatingProfit",
+            "v": 6800,
+            "color": "green",
+            "name": "Operating Profit"
+        },
+        {
+            "id": "OtherIncome",
+            "v": 181,
+            "color": "green",
+            "name": "Other Income"
+        },
+        {
+            "id": "OEMandOther",
+            "v": 66,
+            "color": "green",
+            "name": "OEM and Other"
+        },
+        {
+            "id": "NetIncome",
+            "v": 6188,
+            "color": "green",
+            "name": "Net Income"
+        },
+        {
+            "id": "Tax",
+            "v": 793,
+            "color": "red",
+            "name": "Tax"
+        },
+        {
+            "id": "SG&A",
+            "v": 622,
+            "color": "red",
+            "name": "SG&A"
+        },
+        {
+            "id": "R&D",
+            "v": 2040,
+            "color": "red",
+            "name": "R&D"
+        }
+    ],
+    "link": [
+        {
+            "from": "DataCenter",
+            "to": "Revenue"
+        },
+        {
+            "from": "Gaming",
+            "to": "Revenue"
+        },
+        {
+            "from": "ProfessionalVisualization",
+            "to": "Revenue"
+        },
+        {
+            "from": "Automotive",
+            "to": "Revenue"
+        },
+        {
+            "from": "OEMandOther",
+            "to": "Revenue"
+        },
+        {
+            "from": "Revenue",
+            "to": "CostOfRevenue"
+        },
+        {
+            "from": "Revenue",
+            "to": "GrossProfit"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingExpense"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingProfit"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "R&D"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "SG&A"
+        },
+        {
+            "from": "OtherIncome",
+            "to": "NetIncome"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "Tax"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "NetIncome",
+            "weight_function":"NetIncome-OtherIncome"
+        }
+    ]
+}

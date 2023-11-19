@@ -1,4 +1,5 @@
-const express = require('express');
+import express from 'express';
+import { showCompany } from './showFinancialReport.js';
 
 const app = express();
 const port = 3034;
@@ -7,10 +8,9 @@ const port = 3034;
 app.use(express.static('public'));
 app.use('/data-private', express.static('data-private'));
 
-// import CompanyReporter from './CompanyReporter.js';
 
 app.get('/Company', (req, res) => {
-    // CompanyReporter.show
+    showCompany('google', 'Alphabet', '2022');
 });
 
 

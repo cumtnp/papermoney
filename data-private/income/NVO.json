@@ -1,0 +1,147 @@
+{
+    "title": "Novo Nordisk A/S. Q3 FY23 Income Statement",
+    "subtitle": " Income Statement, for 3 months ended sep 30, 2023，in DKK million",
+    "unit": "M",
+    "values": [
+        {
+            "id": "DiabetesCare",
+            "v": 42574,
+            "color": "blue",
+            "name": "Diabetes care"
+        },
+        {
+            "id": "Revenue",
+            "v": 58731,
+            "color": "blue",
+            "name": "Revenue"
+        },
+        {
+            "id": "CostOfRevenue",
+            "v": 9713,
+            "color": "blue",
+            "name": "Cost of Revenue"
+        },
+        {
+            "id": "Obesity",
+            "v": 12255,
+            "color": "blue",
+            "name": "Obesity"
+        },
+        {
+            "id": "GrossProfit",
+            "v": 49018,
+            "color": "blue",
+            "name": "Gross Profit"
+        },
+        {
+            "id": "OperatingExpense",
+            "v": 22105,
+            "color": "blue",
+            "name": "Operating Expense"
+        },
+        {
+            "id": "R&D",
+            "v": 8128,
+            "color": "blue",
+            "name": "R&D"
+        },
+        {
+            "id": "RareDisease",
+            "v": 3902,
+            "color": "blue",
+            "name": "Rare disease"
+        },
+        {
+            "id": "SalesAndDistribution",
+            "v": 12819,
+            "color": "blue",
+            "name": "Sales and Distribution"
+        },
+        {
+            "id": "Admin",
+            "v": 1256,
+            "color": "blue",
+            "name": "Admin"
+        },
+        {
+            "id": "OtherOperatingIncome",
+            "v": 98,
+            "color": "blue",
+            "name": "Other Operating income"
+        },
+        {
+            "id": "OperatingProfit",
+            "v": 26913,
+            "color": "blue",
+            "name": "Operating Profit"
+        },
+        {
+            "id": "FinancialIncome",
+            "v": 1150,
+            "color": "blue",
+            "name": "Financial Income"
+        },
+        {
+            "id": "Tax",
+            "v": 5585,
+            "color": "blue",
+            "name": "Tax"
+        },
+        {
+            "id": "NetIncome",
+            "v": 22478,
+            "color": "blue",
+            "name": "Net Income"
+        }
+    ],
+    "link": [
+        {
+            "from": "DiabetesCare",
+            "to": "Revenue"
+        },
+        {
+            "from": "Obesity",
+            "to": "Revenue"
+        },
+        {
+            "from": "RareDisease",
+            "to": "Revenue"
+        },
+        {
+            "from": "Revenue",
+            "to": "CostOfRevenue"
+        },
+        {
+            "from": "Revenue",
+            "to": "GrossProfit"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingExpense"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "R&D"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "SalesAndDistribution"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "Admin"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "Tax"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "NetIncome"
+        },
+        {
+            "from": "FinancialIncome",
+            "to": "NetIncome"
+        }
+    ]
+}

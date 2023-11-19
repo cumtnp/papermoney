@@ -1,5 +1,6 @@
 {
   "name": "papermoney",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +12,11 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.1",
+    "canvas": "^2.11.2",
     "d3": "^7.8.5",
-    "d3-sankey": "^0.12.3"
+    "d3-node": "^3.0.0",
+    "d3-sankey": "^0.12.3",
+    "jsdom": "^22.1.0",
+    "sharp": "^0.32.6"
   }
 }

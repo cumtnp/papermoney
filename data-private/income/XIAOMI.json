@@ -1,0 +1,178 @@
+{
+    "title": "Xiaomi Q2 FY23 Income Statement",
+    "logo": "xiaomi_logo.png",
+    "unit": "M",
+    "unit_t":"M",
+    "currency":"RMB",
+    "values": [
+        {
+            "id": "Smartphones",
+            "v": 715.802,
+            "margin": "56.40%",
+            "color": "orange",
+            "name": "Smart Phones"
+        },
+        {
+            "id": "IoTandLifestyleConsumerProductsIOT",
+            "v": 390.876,
+            "margin": "30.80%",
+            "color": "orange",
+            "name": "IOT & Ecosystem Products"
+        },
+        {
+            "id": "InternetServices",
+            "v": 144.722,
+            "margin": "11.40%",
+            "color": "orange",
+            "name": "Internet Services"
+        },
+        {
+            "id": "Other",
+            "v": 4.857,
+            "margin": "0.68%",
+            "color": "orange",
+            "name": "Others"
+        },
+        {
+            "id": "Revenue",
+            "v": 1268.320,
+            "YY": "-11.63%",
+            "color": "orange",
+            "name": "Revenue"
+        },
+        {
+            "id": "GrossProfit",
+            "v": 257.526,
+            "margin": "20.30%",
+            "color": "green",
+            "name": "Gross Profit"
+        },
+        {
+            "id": "CostofRevenue",
+            "v": 1010.794,
+            "margin": "79.70%",
+            "color": "red",
+            "name": "Cost of Revenue"
+        },
+        {
+            "id": "OperatingProfit",
+            "v": 99.407,
+            "margin": "7.84%",
+            "color": "green",
+            "name": "Operating Profit"
+        },
+        {
+            "id": "Otherincome",
+            "v": 37.153,
+            "color": "green",
+            "name": "Other Income"
+        },
+        {
+            "id": "Operatingexpenses",
+            "v": 195.272,
+            "color": "red",
+            "name": "Operating Expenses"
+        },
+        {
+            "id": "Netprofit",
+            "v": 78.817,
+            "margin": "6.21%",
+            "color": "green",
+            "name": "Net Profit"
+        },
+        {
+            "id":"OtherProfit",
+            "v":4.857,
+            "color":"green",
+            "name":"Other Profit"
+        },
+        {
+            "id": "Tax",
+            "v": 25.447,
+            "color": "red",
+            "name": "Tax"
+        },
+        {
+            "id": "RD",
+            "v": 86.682,
+            "color": "red",
+            "name": "R&D"
+        },
+        {
+            "id": "SM",
+            "v": 85.806,
+            "color": "red",
+            "name": "S&M"
+        },
+        {
+            "id": "GA",
+            "v": 22.784,
+            "color": "red",
+            "name": "G&A"
+        }
+    ],
+    "link": [
+        {
+            "from": "Smartphones",
+            "to": "Revenue"
+        },
+        {
+            "from": "IoTandLifestyleConsumerProductsIOT",
+            "to": "Revenue"
+        },
+        {
+            "from": "InternetServices",
+            "to": "Revenue"
+        },
+        {
+            "from": "Other",
+            "to": "Revenue"
+        },
+        {
+            "from": "Revenue",
+            "to": "GrossProfit"
+        },
+        {
+            "from": "Revenue",
+            "to": "CostofRevenue"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingProfit",
+            "weight_function":"OperatingProfit-Otherincome"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "Operatingexpenses"
+        },
+        {
+            "from": "Otherincome",
+            "to": "OperatingProfit"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "Netprofit",
+            "weight_function":"Netprofit-OtherProfit"
+        },
+        {
+            "from": "OtherProfit",
+            "to": "Netprofit"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "Tax"
+        },
+        {
+            "from": "Operatingexpenses",
+            "to": "RD"
+        },
+        {
+            "from": "Operatingexpenses",
+            "to": "SM"
+        },
+        {
+            "from": "Operatingexpenses",
+            "to": "GA"
+        }
+    ]
+}

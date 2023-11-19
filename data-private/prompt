@@ -1,0 +1,86 @@
+帮我取出这里的key和value，key只保留英文：
+
+要处理的数据如下：
+"Value-Added Services
+增值服务"	75,748	49.0%	4.2%	——>	"Revenue
+收入"	154,625.0 	10.4%	"Gross Profit
+毛利"	76,523.0 	49.5%	"Operating Profit
+营业利润"	48,475.0 	31.4%	"Net Profit
+净利"	36,781.0 	23.8%
+"Online Advertising
+在线广告"	25,721	16.0%	20.0%	——>										"Other
+其他"	686.0 	0.4%
+"FinTech and Business Services
+金融科技和商业服务"	52,048	34.0%	16.1%	——>										"Tax
+所得税费用"	11,008.0 	7.1%
+"Other
+其他"	1,108	1.0%	2.7%	——>							"Other income
+其他收益/亏损 "	6,153.0 	4.0%			
+											"Operating expenses
+营业费用"	34,201.0 	22.1%	"S&M
+销售和营销费用"	7,912.0 	5.1%
+														"G&A
+一般及行政开支
+"	26,289.0 	17.0%
+								"Cost of Revenue
+收入成本"	78,102.0 	50.5%						
+
+下一步帮我将数据转成json数组。如果没有margin，就没有这一项，默认颜色都是blue
+例如数据：
+Gross Profit: 76,523.0, 49.5%
+
+{
+            "id": "GrossProfit",
+            "v":  76,523.0,
+            "margin": "49.5%",
+            "color": "blue",
+            "name": "Gross Profit"
+        }
+
+下面帮我继续生产link的数组：
+{
+      "from": "GrossProfit",
+      "to": "OperatingExpense"
+    }
+逻辑：
+from:
+ Upstream 
+ Energy Production 
+ Chemincal Products 
+ Specialty Products and Others 
+to:
+  Revenue  
+
+from:
+ Revenue 
+to:
+ Cost of Revenue 
+ Gross Profit 
+
+from:
+ Gross Profit 
+to:
+  Operating Expense 
+ Operating Profit 
+
+from:
+Operating Expense 
+to:
+ Production and manufacturing 
+ SG&A 
+ Depreciation and depletion 
+ Other costs and deductions 
+
+from:
+ Gross Profit 
+to:
+ Operating Profit 
+
+from:
+ Operating Profit 
+to: Tax 
+
+from:
+ Net loss 
+to:
+ Tax 

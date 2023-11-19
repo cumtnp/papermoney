@@ -1,0 +1,176 @@
+{
+    "title": "美团(3690) Q3 FY23 Income Statement",
+    "unit": "M",
+    "currency": "RMB",
+    "values": [
+        {
+            "id": "DeliveryService",
+            "v": 20375,
+            "margin": "30%",
+            "color": "gray",
+            "name": "Delivery Service"
+        },
+        {
+            "id": "Commission",
+            "v": 18912,
+            "margin": "28%",
+            "color": "gray",
+            "name": "Commission"
+        },
+        {
+            "id": "MarketingServices",
+            "v": 10307,
+            "margin": "15%",
+            "color": "gray",
+            "name": "Marketing Services"
+        },
+        {
+            "id": "OtherServicesAndSales",
+            "v": 18370,
+            "margin": "27%",
+            "color": "gray",
+            "name": "Other Services and Sales"
+        },
+        {
+            "id": "Revenue",
+            "v": 67964.6,
+            "margin": "33.4%YY",
+            "color": "gray",
+            "name": "Revenue"
+        },
+        {
+            "id": "GrossProfit",
+            "v": 25398,
+            "margin": "37%",
+            "color": "green",
+            "name": "Gross Profit"
+        },
+        {
+            "id": "OtherIncome",
+            "v": 1414,
+            "color": "red",
+            "name": "Other Income"
+        },
+        {
+            "id": "CostOfRevenue",
+            "v": 42567,
+            "margin": "63%",
+            "color": "red",
+            "name": "Cost of Revenue"
+        },
+        {
+            "id": "OperatingProfit",
+            "v": 4713,
+            "margin": "7%",
+            "color": "green",
+            "name": "Operating Profit"
+        },
+        {
+            "id": "OperatingExpenses",
+            "v": 22099,
+            "margin": "33%",
+            "color": "red",
+            "name": "Operating Expenses"
+        },
+        {
+            "id": "NetProfit",
+            "v": 4689,
+            "margin": "7%",
+            "color": "green",
+            "name": "Net Profit"
+        },
+        {
+            "id": "Other",
+            "v": 14,
+            "color": "red",
+            "name": "Other"
+        },
+        {
+            "id": "Tax",
+            "v": 10,
+            "color": "red",
+            "name": "Tax"
+        },
+        {
+            "id": "RnD",
+            "v": 5407,
+            "color": "red",
+            "name": "R&D"
+        },
+        {
+            "id": "SnM",
+            "v": 14553,
+            "color": "red",
+            "name": "S&M"
+        },
+        {
+            "id": "GnA",
+            "v": 2139,
+            "color": "red",
+            "name": "G&A"
+        }
+    ],
+    "link": [
+        {
+            "from": "DeliveryService",
+            "to": "Revenue"
+        },
+        {
+            "from": "Commission",
+            "to": "Revenue"
+        },
+        {
+            "from": "MarketingServices",
+            "to": "Revenue"
+        },
+        {
+            "from": "OtherServicesAndSales",
+            "to": "Revenue"
+        },
+        {
+            "from": "Revenue",
+            "to": "GrossProfit"
+        },
+        {
+            "from": "Revenue",
+            "to": "CostOfRevenue"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingProfit"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingExpenses",
+            "weight_function": "OperatingExpenses-OtherIncome"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "NetProfit"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "Other"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "Tax"
+        },
+        {
+            "from": "OperatingExpenses",
+            "to": "RnD"
+        },
+        {
+            "from": "OperatingExpenses",
+            "to": "SnM"
+        },
+        {
+            "from": "OperatingExpenses",
+            "to": "GnA"
+        },
+        {
+            "from": "OtherIncome",
+            "to": "OperatingExpenses"
+        }
+    ]
+}

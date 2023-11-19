@@ -1,0 +1,145 @@
+{
+    "title": "Meta Platforms, Inc. Q3 FY23 Income Statement",
+    "unit": "M",
+    "values": [
+        {
+            "id": "Advertising",
+            "v": 33643,
+            "name": "Advertising",
+            "color": "gray"
+        },
+        {
+            "id": "Revenue",
+            "v": 34146,
+            "name": "Revenue",
+            "color": "gray"
+        },
+        {
+            "id": "CostOfRevenue",
+            "v": 6210,
+            "name": "Cost of Revenue",
+            "color": "red"
+        },
+        {
+            "id": "RealityLabs",
+            "v": 210,
+            "name": "Reality Labs",
+            "color": "gray"
+        },
+        {
+            "id": "GrossProfit",
+            "v": 27936,
+            "name": "Gross Profit",
+            "color": "green"
+        },
+        {
+            "id": "OperatingExpense",
+            "v": 14188,
+            "name": "Operating Expense",
+            "color": "red"
+        },
+        {
+            "id": "Tax",
+            "v": 2437,
+            "name": "Tax",
+            "color": "red"
+        },
+        {
+            "id": "ResearchAndDevelopment",
+            "v": 9241,
+            "name": "R&D",
+            "color": "red"
+        },
+        {
+            "id": "Others",
+            "v": 293,
+            "name": "Others",
+            "color": "gray"
+        },
+        {
+            "id": "MarketingAndSales",
+            "v": 2877,
+            "name": "Marketing and Sales",
+            "color": "red"
+        },
+        {
+            "id": "GeneralAndAdministrative",
+            "v": 2070,
+            "name": "G&A",
+            "color": "red"
+        },
+        {
+            "id": "OperatingProfit",
+            "v": 13748,
+            "name": "Operating Profit",
+            "color": "green"
+        },
+        {
+            "id": "OtherIncome",
+            "v": 272,
+            "name": "Other Income",
+            "color": "green"
+        },
+        {
+            "id": "NetIncome",
+            "v": 11583,
+            "name": "Net Income",
+            "color": "green"
+        }
+    ],
+    "link": [
+        {
+            "from": "Advertising",
+            "to": "Revenue"
+        },
+        {
+            "from": "RealityLabs",
+            "to": "Revenue"
+        },
+        {
+            "from": "Others",
+            "to": "Revenue"
+        },
+        {
+            "from": "Revenue",
+            "to": "CostOfRevenue"
+        },
+        {
+            "from": "Revenue",
+            "to": "GrossProfit"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingExpense"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingProfit"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "ResearchAndDevelopment"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "MarketingAndSales"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "GeneralAndAdministrative"
+        },
+        {
+            "from": "OtherIncome",
+            "to": "NetIncome"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "Tax"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "NetIncome",
+            "weight_function": "NetIncome-OtherIncome"
+        }
+    ]
+}

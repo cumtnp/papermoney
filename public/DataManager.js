@@ -1,3 +1,5 @@
+
+
 var DataManager = (function () {
     var instances = {};
     var compayName = null;

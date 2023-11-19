@@ -1,0 +1,135 @@
+{
+    "title": "Walmart Inc. Q3 FY23 Income Statement",
+    "unit": "M",
+    "values": [
+        {
+            "id": "WalmartUS",
+            "v": 110854,
+            "color": "blue",
+            "name": "Walmart U.S."
+        },
+        {
+            "id": "WarmartInternational",
+            "v": 27596,
+            "color": "blue",
+            "name": "Warmart International"
+        },
+        {
+            "id": "SamsClub",
+            "v": 21830,
+            "color": "blue",
+            "name": "Sam's Club"
+        },
+        {
+            "id": "MembershipAndOthers",
+            "v": 1352,
+            "color": "blue",
+            "name": "Membership and others"
+        },
+        {
+            "id": "Revenue",
+            "v": 161632,
+            "color": "blue",
+            "name": "Revenue"
+        },
+        {
+            "id": "GrossProfit",
+            "v": 39782,
+            "color": "green",
+            "name": "Gross Profit"
+        },
+        {
+            "id": "CostOfRevenue",
+            "v": 121850,
+            "color": "red",
+            "name": "Cost of Revenue"
+        },
+        {
+            "id": "OperatingProfit",
+            "v": 7316,
+            "color": "green",
+            "name": "Operating Profit"
+        },
+        {
+            "id": "Interest",
+            "v": 494,
+            "color": "green",
+            "name": "Interest"
+        },
+        {
+            "id": "OtherGains",
+            "v": 3905,
+            "color": "green",
+            "name": "Other gains"
+        },
+        {
+            "id": "NetIncome",
+            "v": 8053,
+            "color": "green",
+            "name": "Net Income"
+        },
+        {
+            "id": "Tax",
+            "v": 2674,
+            "color": "red",
+            "name": "Tax"
+        },
+        {
+            "id": "OperatingExpense",
+            "v": 32466,
+            "color": "red",
+            "name": "Operating Expense"
+        }
+    ],
+    "link": [
+        {
+            "from": "WalmartUS",
+            "to": "Revenue"
+        },
+        {
+            "from": "WarmartInternational",
+            "to": "Revenue"
+        },
+        {
+            "from": "SamsClub",
+            "to": "Revenue"
+        },
+        {
+            "from": "MembershipAndOthers",
+            "to": "Revenue"
+        },
+        {
+            "from": "Revenue",
+            "to": "GrossProfit"
+        },
+        {
+            "from": "Revenue",
+            "to": "CostOfRevenue"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingProfit"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingExpense"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "NetIncome",
+            "weight_function": "NetIncome-Interest-OtherGains"
+        },
+        {
+            "from": "Interest",
+            "to": "NetIncome"
+        },
+        {
+            "from": "OtherGains",
+            "to": "NetIncome"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "Tax"
+        }
+    ]
+}

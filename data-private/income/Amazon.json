@@ -1,0 +1,207 @@
+{
+    "title": "Amazon.com, Inc. 2023 Q3",
+    "source": " https://www.sec.gov/ix?doc=/Archives/edgar/data/1018724/000101872423000018/amzn-20230930.htm ",
+    "unit": "M",
+    "currency":"USD",
+    "values": [
+        {
+            "id": "OnlineStores",
+            "v": 57267,
+            "color": "gray",
+            "name": "Online Stores"
+        },
+        {
+            "id": "PhysicalStores",
+            "v": 4959,
+            "color": "gray",
+            "name": "Physical Stores"
+        },
+        {
+            "id": "ThirdPartySellerServices",
+            "v": 34342,
+            "color": "gray",
+            "name": "Third-party Seller Services"
+        },
+        {
+            "id": "SubscriptionServices",
+            "v": 10170,
+            "color": "gray",
+            "name": "Subscription Services"
+        },
+        {
+            "id": "AdvertisingServices",
+            "v": 12060,
+            "color": "gray",
+            "name": "Advertising Services"
+        },
+        {
+            "id": "AWS",
+            "v": 23059,
+            "color": "gray",
+            "name": "AWS"
+        },
+        {
+            "id": "Other",
+            "v": 1226,
+            "color": "gray",
+            "name": "Other"
+        },
+        {
+            "id": "Revenue",
+            "v": 143083,
+            "color": "gray",
+            "name": "Revenue"
+        },
+        {
+            "id": "GrossProfit",
+            "v": 68061,
+            "color": "green",
+            "name": "Gross Profit"
+        },
+        {
+            "id": "CostOfRevenue",
+            "v": 75022,
+            "color": "red",
+            "name": "Cost of Revenue"
+        },
+        {
+            "id": "OperatingIncome",
+            "v": 11188,
+            "color": "green",
+            "name": "Operating Income"
+        },
+        {
+            "id": "Tax",
+            "v": 2310,
+            "color": "red",
+            "name": "Tax"
+        },
+        {
+            "id": "NetIncome",
+            "v": 9879,
+            "color": "green",
+            "name": "Net Income"
+        },
+        {
+            "id": "OtherIncome",
+            "v": 1001,
+            "color": "green",
+            "name": "Other Income"
+        },
+        {
+            "id": "OperatingExpense",
+            "v": 56873,
+            "color": "red",
+            "name": "Operating Expense"
+        },
+        {
+            "id": "Fulfillment",
+            "v": 22314,
+            "color": "red",
+            "name": "Fulfillment"
+        },
+        {
+            "id": "TechInfrastructure",
+            "v": 21203,
+            "color": "red",
+            "name": "Tech & Infrastructure"
+        },
+        {
+            "id": "SalesMarketing",
+            "v": 10551,
+            "color": "red",
+            "name": "Sales & Marketing"
+        },
+        {
+            "id": "GAndA",
+            "v": 2561,
+            "color": "red",
+            "name": "G&A"
+        },
+        {
+            "id": "OtherOperatingExpense",
+            "v": 244,
+            "color": "red",
+            "name": "Other Operating Expense"
+        }
+    ],
+    "link": [
+        {
+            "from": "OnlineStores",
+            "to": "Revenue"
+        },
+        {
+            "from": "PhysicalStores",
+            "to": "Revenue"
+        },
+        {
+            "from": "ThirdPartySellerServices",
+            "to": "Revenue"
+        },
+        {
+            "from": "SubscriptionServices",
+            "to": "Revenue"
+        },
+        {
+            "from": "AdvertisingServices",
+            "to": "Revenue"
+        },
+        {
+            "from": "AWS",
+            "to": "Revenue"
+        },
+        {
+            "from": "Other",
+            "to": "Revenue"
+        },
+        {
+            "from": "Revenue",
+            "to": "GrossProfit"
+        },
+        {
+            "from": "Revenue",
+            "to": "CostOfRevenue"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingIncome"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingExpense"
+        },
+        {
+            "from": "OperatingIncome",
+            "to": "Tax"
+        },
+        {
+            "from": "OperatingIncome",
+            "to": "NetIncome",
+            "weight_function":"NetIncome-OtherIncome"
+        },
+        {
+            "from": "OtherIncome",
+            "to": "NetIncome"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "Fulfillment"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "TechInfrastructure"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "SalesMarketing"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "GAndA"
+        },
+        {
+            "from": "OperatingExpense",
+            "to": "OtherOperatingExpense"
+        }
+    ]
+}

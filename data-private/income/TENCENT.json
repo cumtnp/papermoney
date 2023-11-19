@@ -1,0 +1,166 @@
+{
+    "title": "Tencent Q3 FY23 Income Statement",
+    "logo": "tencent_logo.png",
+    "unit": "M",
+    "currency":"RMB",
+    "values": [
+        {
+            "id": "ValueAddedServices",
+            "v": 75748,
+            "margin": "49.0%",
+            "color": "gray",
+            "name": "Value-Added Services"
+        },
+        {
+            "id": "Revenue",
+            "v": 154625.0,
+            "margin": "10.4%YY",
+            "color": "gray",
+            "name": "Revenue"
+        },
+        {
+            "id": "GrossProfit",
+            "v": 76523.0,
+            "margin": "49.5%",
+            "color": "green",
+            "name": "Gross Profit"
+        },
+        {
+            "id": "OperatingProfit",
+            "v": 48475.0,
+            "margin": "31.4%",
+            "color": "green",
+            "name": "Operating Profit"
+        },
+        {
+            "id": "NetProfit",
+            "v": 36781.0,
+            "margin": "23.8%",
+            "color": "green",
+            "name": "Net Profit"
+        },
+        {
+            "id": "OnlineAdvertising",
+            "v": 25721,
+            "margin": "16.0%",
+            "color": "gray",
+            "name": "Online Advertising"
+        },
+        {
+            "id": "FinTechAndBusinessServices",
+            "v": 52048,
+            "margin": "34.0%",
+            "color": "gray",
+            "name": "FinTech and Business Services"
+        },
+        {
+            "id": "Other1",
+            "v": 686.0,
+            "color": "gray",
+            "name": "Other"
+        },
+        {
+            "id": "Tax",
+            "v": 11008.0,
+            "color": "red",
+            "name": "Tax"
+        },
+        {
+            "id": "Other2",
+            "v": 1108,
+            "color": "red",
+            "name": "Other"
+        },
+        {
+            "id": "OtherIncome",
+            "v": 6153.0,
+            "color": "green",
+            "name": "Other income"
+        },
+        {
+            "id": "OperatingExpenses",
+            "v": 34201.0,
+            "margin": "22.1%",
+            "color": "red",
+            "name": "Operating expenses"
+        },
+        {
+            "id": "SM",
+            "v": 7912.0,
+            "color": "red",
+            "name": "S&M"
+        },
+        {
+            "id": "GA",
+            "v": 26289.0,
+            "color": "red",
+            "name": "G&A"
+        },
+        {
+            "id": "CostOfRevenue",
+            "v": 78102.0,
+            "margin": "50.5%",
+            "color": "red",
+            "name": "Cost of Revenue"
+        }
+    ],
+    "link": [
+        {
+            "from": "ValueAddedServices",
+            "to": "Revenue"
+        },
+        {
+            "from": "OnlineAdvertising",
+            "to": "Revenue"
+        },
+        {
+            "from": "FinTechAndBusinessServices",
+            "to": "Revenue"
+        },
+        {
+            "from": "Other1",
+            "to": "Revenue"
+        },
+        {
+            "from": "Revenue",
+            "to": "GrossProfit"
+        },
+        {
+            "from": "Revenue",
+            "to": "CostOfRevenue"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingProfit",
+            "weight_function": "OperatingProfit-OtherIncome"
+        },
+        {
+            "from": "OtherIncome",
+            "to": "OperatingProfit"
+        },
+        {
+            "from": "GrossProfit",
+            "to": "OperatingExpenses"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "NetProfit"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "Tax"
+        },
+        {
+            "from": "OperatingProfit",
+            "to": "Other2"
+        },
+        {
+            "from": "OperatingExpenses",
+            "to": "SM"
+        },
+        {
+            "from": "OperatingExpenses",
+            "to": "GA"
+        }
+    ]
+}
